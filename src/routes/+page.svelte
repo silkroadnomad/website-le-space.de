@@ -1,6 +1,5 @@
 <script>
     import "carbon-components-svelte/css/all.css";
-    import Asleep from "carbon-icons-svelte/lib/Asleep.svelte";
 
     import { Theme } from "carbon-components-svelte";
 
@@ -11,9 +10,11 @@
     const description = "General IT- and Technology Consulting, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
+    const favicon = "./favicon.ico"
 </script>
 <svelte:head>
     <title>{title}</title>
+    <link rel="icon" type="image/svg" href={favicon} />
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description}>
