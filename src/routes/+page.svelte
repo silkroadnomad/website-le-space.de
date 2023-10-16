@@ -2,17 +2,29 @@
     import "carbon-components-svelte/css/all.css";
     import Asleep from "carbon-icons-svelte/lib/Asleep.svelte";
 
-    import {
-        Theme,
-        Grid, Row, Column
-    } from "carbon-components-svelte";
+    import { Theme } from "carbon-components-svelte";
 
     import {browser} from "$app/environment";
-    let theme = "g90";
+    import {PUBLIC_WEB_URL} from "$env/static/public";
+
+    const title = "Le Space - IT- Consulting"
+    const description = "General IT- and Technology Consulting, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
+    const url = "https://le-space.de"
+    const image = PUBLIC_WEB_URL+"le-space-ug.png"
 </script>
-
-
 <svelte:head>
+    <title>{title}</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="/le-space-ug.png">
+    <meta property="og:url" content={url}>
+    <meta name="description" content={description}/>
+    <meta name="twitter:card" content={description} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
     {#if browser}
         <script async src="https://cozycal.com/embed/v1/9375.js"></script>
     {/if}
@@ -43,7 +55,7 @@
         </p>
         <p>&nbsp;</p>
         <p>
-            When Le Space opened its doors, it wasn't just a coworking space—it was a vision of the future of work. Over the years, we've witnessed and shaped the rise of remote work and freelance culture, gathering unparalleled insights into the dynamics of collaborative environments, both physical and virtual.
+            When Le Space (beta) opened its doors in the physical world, it wasn't just a coworking space—it was a vision of the future of work. Over the years, we've witnessed and shaped the rise of remote work and freelance culture, gathering unparalleled insights into the dynamics of collaborative environments, both physical and virtual.
         </p>
         <p>&nbsp;</p>
         <p>
@@ -69,6 +81,7 @@
                 We understand the nuances of space design, community building, and logistical management, ensuring a harmonious blend of productivity and collaboration.</li>
             <p>&nbsp;</p>
         </ul>
+<!--        https://support.cozycal.com/gdpr-data-processing-agreement-->
         <p>&nbsp;</p>
         <h6>Impressum: <br/>Le Space UG (haftungsbeschränkt), Lichtenberg 44, D-84307 Eggenfelden, Germany
             <br/>Tel.: +49 8721 128 9600-0
