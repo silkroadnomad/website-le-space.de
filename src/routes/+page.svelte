@@ -20,8 +20,8 @@
                 Whether you're exploring new tech endeavors or refining existing systems, our team is equipped to guide you through the intricacies of the IT world. (more...)</li>
             <p>&nbsp;</p>
             <li><strong>Peer Programming Sessions:</strong><br><br>
-                Beyond traditional IT-consulting, we're proud to introduce our Peer Programming Sessions.
-                These are specially designed for programmers and IT professionals, offering a collaborative platform to enhance skills, ensure code quality, and foster a culture of shared expertise. (more...)</li>
+                Beyond traditional IT-consulting, we're proud to introduce our virtual Peer Programming Sessions.
+                These are specially designed for programmers and IT professionals, to ensure code quality, and foster a culture of shared expertise. (more...)</li>
             <p>&nbsp;</p>
 <!--           <li><strong>Remote Work Consulting:</strong>
                As remote work becomes a global norm, the challenges it brings to the forefront are equally universal.
