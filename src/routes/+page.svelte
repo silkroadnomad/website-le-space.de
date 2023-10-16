@@ -1,47 +1,5 @@
-<script>
-    import "carbon-components-svelte/css/all.css";
 
-    import { Theme } from "carbon-components-svelte";
-
-    import {browser} from "$app/environment";
-    import {PUBLIC_WEB_URL} from "$env/static/public";
-
-    const title = "Le Space - IT & Software Consulting"
-    const description = "General IT- and Technology Consulting, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
-    const url = "https://le-space.de"
-    const image = PUBLIC_WEB_URL+"le-space-ug.png"
-    const favicon = "./favicon.ico"
-</script>
-<svelte:head>
-    <title>{title}</title>
-    <link rel="icon" type="image/svg" href={favicon} />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={url} />
-    <meta name="description" content={description}/>
-    <meta name="twitter:card" content={description} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-
-    {#if browser}
-        <script async src="https://cozycal.com/embed/v1/9375.js"></script>
-    {/if}
-</svelte:head>
 <div class="container">
-    <Theme
-            render="toggle"
-            toggle={{
-    themes: ["g10", "g80"],
-    labelA: "dark mode",
-    labelB: "light mode",
-    hideLabel: true,
-    size: "sm",
-  }}
-    />
-
     <div class="logo-container">
         <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" />
     </div>
@@ -53,7 +11,11 @@
         </p>
         <p>&nbsp;</p>
         <p>
-            When Le Space (beta) opened its doors in the physical world, it wasn't just a coworking space—it was a vision of the future of work. Over the years, we've witnessed and shaped the rise of remote work and freelance culture, gathering unparalleled insights into the dynamics of collaborative environments, both physical and virtual.
+            When Le Space (beta) opened its doors in the physical world between 2009 and 2011 in Leipzig,
+            it wasn't just a coworking space, it was a vision of the future of work.<br><br>
+
+            After 2011, we've witnessed and shaped the rise of remote work and freelance culture,
+            gathering unparalleled insights into the dynamics of collaborative environments, both physical and virtual.
         </p>
         <p>&nbsp;</p>
         <p>
@@ -93,10 +55,6 @@
         margin: 0;
         padding: 0;
         /*background-color: #f4f4f4;*/
-    }
-
-    .darkmode {
-
     }
     .container {
         max-width: 800px;
