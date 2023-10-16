@@ -17,7 +17,7 @@
         <p>&nbsp;</p>
         <ul>
             <li><strong>IT- and Technology Consulting:</strong> <br><br>With deep-rooted expertise in a diverse range of technologies, we provide bespoke solutions in the field software & IT.
-                Whether you're exploring new tech endeavors or refining existing systems, our team is equipped to guide you through the intricacies of the IT world. (more...)</li>
+                Whether you're exploring new tech endeavors or refining existing systems, we are equipped to guide you through the intricacies of the IT world. (more...)</li>
             <p>&nbsp;</p>
             <li><strong>Peer Programming Sessions:</strong><br><br>
                 Beyond traditional IT-consulting, we're proud to introduce our virtual Peer Programming Sessions starting with JDoc and e2e-Tests with Cypress.
