@@ -1,22 +1,13 @@
 <script>
     import "carbon-components-svelte/css/all.css";
-    import Asleep from "carbon-icons-svelte/lib/Asleep.svelte";
-
     import { Theme } from "carbon-components-svelte";
-
     import {browser} from "$app/environment";
-    let theme = "g90";
 </script>
-
-
 <svelte:head>
     {#if browser}
         <script async src="https://cozycal.com/embed/v1/9375.js"></script>
     {/if}
 </svelte:head>
-<!--<div class="darkmode">-->
-<!--    <Asleep />-->
-<!--</div>-->
 <div class="container">
     <Theme
             render="toggle"
