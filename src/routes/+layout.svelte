@@ -36,9 +36,9 @@
 
 <Header company="Le Space" platformName="IT-Consulting">
     <HeaderNav>
-        <HeaderNavItem href="/" text="About" />
+<!--        <HeaderNavItem href="/" text="About" />
         <HeaderNavItem href="/" text="References" />
-        <HeaderNavItem href="/" text="Impressum" />
+        <HeaderNavItem href="/" text="Impressum" />-->
     </HeaderNav>
     <HeaderNav>
         <Grid fullWidth>
@@ -47,25 +47,27 @@
                 <Column>&nbsp;</Column>
                 <Column>&nbsp;</Column>
                 <Column></Column>
-                <Column><div style="padding: 15px;">
-                    <Theme
-                        render="toggle"
-                        toggle={{
-                        themes: ["g10", "g80"],
-                        labelA: "dark mode",
-                        labelB: "light mode",
-                        hideLabel: true,
-                        size: "sm",
-                  }}/></div>
+                <Column>
+                    <div style="padding: 15px;">
+                        <Theme
+                            render="toggle"
+                            toggle={{
+                            themes: ["g10", "g80"],
+                            labelA: "dark mode",
+                            labelB: "light mode",
+                            hideLabel: true,
+                            size: "sm",
+                      }}/>
+                    </div>
                 </Column>
             </Row>
         </Grid>
-
     </HeaderNav>
 </Header>
+
+<slot></slot>
 <style>
-    .theme-toggle {
-        padding: 50px;
+    .body {
+        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     }
 </style>
-<slot></slot>
