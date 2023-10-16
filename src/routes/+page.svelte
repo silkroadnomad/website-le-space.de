@@ -6,7 +6,7 @@
     import {browser} from "$app/environment";
     import {PUBLIC_WEB_URL} from "$env/static/public";
 
-    const title = "Le Space - IT- and Software Consulting"
+    const title = "Le Space - IT & Software Consulting"
     const description = "General IT- and Technology Consulting, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
