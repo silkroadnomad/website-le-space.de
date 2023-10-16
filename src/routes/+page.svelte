@@ -38,8 +38,8 @@
             render="toggle"
             toggle={{
     themes: ["g10", "g80"],
-    labelA: "Enable dark mode",
-    labelB: "Enable dark mode",
+    labelA: "dark mode",
+    labelB: "light mode",
     hideLabel: true,
     size: "sm",
   }}
