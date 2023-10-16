@@ -13,7 +13,7 @@
             <Column>
                 <div class="title-text">
                     <h1>Welcome   <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
-                    <p>innovations in IT and software environments</p>
+                    <p>innovations in IT and software</p>
                 </div>
             </Column>
         </Row>

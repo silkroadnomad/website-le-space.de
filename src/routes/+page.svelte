@@ -16,11 +16,11 @@
 
         <p>&nbsp;</p>
         <ul>
-            <li><strong>IT- and Technology Consulting:</strong> <br><br>With deep-rooted expertise in a diverse range of technologies, we provide bespoke solutions in the field software & IT.
+            <li><strong><span style="color: orange">IT- and Technology Consulting:</span></strong> <br><br>With deep-rooted expertise in a diverse range of technologies, we provide bespoke solutions in the field of software and IT.
                 Whether you're exploring new tech endeavors or refining existing systems, we are equipped to guide you through the intricacies of the IT world. (more...)</li>
             <p>&nbsp;</p>
-            <li><strong>Peer Programming Sessions:</strong><br><br>
-                Beyond traditional IT-consulting, we're proud to introduce our virtual Peer Programming Sessions starting in the near future with JDoc and e2e-Tests with Cypress.
+            <li><strong>(New!) <span style="color: orange"> Peer Programming Sessions:</span></strong><br><br>
+                Beyond traditional IT-consulting, we're proud to introduce our Virtual Peer Programming Sessions <span style="color: orange"><strong> starting in Oktober 2023 with JDoc and e2e-Tests </strong></span> with Cypress.
                 These are specially designed for programmers and IT professionals, to ensure code quality and speed up the project time line. (more...)</li>
             <p>&nbsp;</p>
 <!--           <li><strong>Remote Work Consulting:</strong>
