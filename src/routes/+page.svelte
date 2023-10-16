@@ -6,7 +6,7 @@
     import {browser} from "$app/environment";
     import {PUBLIC_WEB_URL} from "$env/static/public";
 
-    const title = "Le Space - IT- Consulting"
+    const title = "Le Space - IT- and Software Consulting"
     const description = "General IT- and Technology Consulting, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
@@ -17,9 +17,9 @@
     <link rel="icon" type="image/svg" href={favicon} />
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description}>
-    <meta property="og:image" content={image}>
-    <meta property="og:url" content={url}>
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
     <meta name="description" content={description}/>
     <meta name="twitter:card" content={description} />
     <meta name="twitter:title" content={title} />
@@ -30,9 +30,6 @@
         <script async src="https://cozycal.com/embed/v1/9375.js"></script>
     {/if}
 </svelte:head>
-<!--<div class="darkmode">-->
-<!--    <Asleep />-->
-<!--</div>-->
 <div class="container">
     <Theme
             render="toggle"
