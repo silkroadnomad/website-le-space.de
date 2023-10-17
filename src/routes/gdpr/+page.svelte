@@ -18,7 +18,7 @@
                 Lichtenberg 44<br />
                 84307 Eggenfelden</p>
 
-            <p>Phone: +49 8 721 128 960 0 - 0<br />
+            <p>Phone: +49 8 721 128 9600 - 0<br />
                 E-mail: info@le-space.de</p>
             <p>The controller is the natural person or legal entity that single-handedly or jointly with others makes decisions as to the purposes of and resources for the processing of personal data (e.g., names, e-mail addresses, etc.).</p>
 
@@ -30,7 +30,7 @@
                 Lichtenberg 44<br />
                 84307 Eggenfelden</p>
 
-            <p>Phone: +49 8 721 128 960 0 - 0<br />
+            <p>Phone: +49 8 721 128 9600 - 0<br />
                 E-mail: nico.krause@le-space.de</p>
             <h3>Recipients of personal data</h3> <p>In the scope of our business activities, we cooperate with various external parties. In some cases, this also requires the transfer of personal data to these external parties. We only disclose personal data to external parties if this is required as part of the fulfillment of a contract, if we are legally obligated to do so (e.g., disclosure of data to tax authorities), if we have a legitimate interest in the disclosure pursuant to Art. 6 (1)(f) GDPR, or if another legal basis permits the disclosure of this data. When using processors, we only disclose personal data of our customers on the basis of a valid contract on data processing. In the case of joint processing, a joint processing agreement is concluded.</p>
             <h3>Revocation of your consent to the processing of data</h3> <p>A wide range of data processing transactions are possible only subject to your express consent. You can also revoke at any time any consent you have already given us. This shall be without prejudice to the lawfulness of any data collection that occurred prior to your revocation.</p>

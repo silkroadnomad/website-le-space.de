@@ -4,6 +4,11 @@
         Theme, Header,
         HeaderNav,
         HeaderNavItem, Column, Row, Grid,
+        SideNav,
+        SideNavItems,
+        SideNavLink,
+        SideNavMenu,
+        SideNavMenuItem,
     } from "carbon-components-svelte";
 
     import {browser} from "$app/environment";
@@ -15,6 +20,7 @@
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
     const favicon = "./favicon.ico"
 
+    let isSideNavOpen = false;
 </script>
 <svelte:head>
     <title>{title}</title>
@@ -36,18 +42,19 @@
     {/if}
 </svelte:head>
 
-<Header company="Le Space" platformName="IT-Consulting" href="/">
+<Header
+        persistentHamburgerMenu={true}
+        bind:isSideNavOpen
+        company="Le Space"
+        platformName="IT-Consulting"
+        href="/">
     <HeaderNav>
-        <HeaderNavItem href="/gdpr" text="Data Protection" />
-        <HeaderNavItem href="/imprint" text="Imprint" />
+<!--        <HeaderNavItem href="/gdpr" text="Data Protection" />
+        <HeaderNavItem href="/imprint" text="Imprint" />-->
     </HeaderNav>
     <HeaderNav>
         <Grid fullWidth>
             <Row>
-                <Column>&nbsp;</Column>
-                <Column>&nbsp;</Column>
-                <Column>&nbsp;</Column>
-                <Column></Column>
                 <Column>
                     <div style="padding: 15px;">
                         <Theme
@@ -65,6 +72,19 @@
         </Grid>
     </HeaderNav>
 </Header>
+
+<SideNav bind:isOpen={isSideNavOpen}>
+    <SideNavItems>
+        <SideNavLink href="/gdpr" text="Data Protection" />
+        <SideNavLink href="/imprint" text="Imprint" />
+<!--        <SideNavLink text="Link 3" />
+        <SideNavMenu text="Menu">
+            <SideNavMenuItem href="/" text="Link 1" />
+            <SideNavMenuItem href="/" text="Link 2" />
+            <SideNavMenuItem href="/" text="Link 3" />
+        </SideNavMenu>-->
+    </SideNavItems>
+</SideNav>
 
 <slot></slot>
 <style>
