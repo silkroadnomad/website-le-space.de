@@ -36,13 +36,7 @@
     </div>
 </div>
 <style>
-    body {
-        /*   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;*/
-        font-family: "Segoe UI", "Helvetica Neue", sans-serif;
-        margin: 0;
-        padding: 0;
-        /*background-color: #f4f4f4;*/
-    }
+
     h1,h2 {
         padding-top: 15px;
         padding-bottom: 15px;

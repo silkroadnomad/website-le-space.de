@@ -66,13 +66,13 @@
         </div>
 </div>
 <style>
-    body {
-        /*   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;*/
+/*    body {
+        !*   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;*!
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
         margin: 0;
         padding: 0;
-        /*background-color: #f4f4f4;*/
-    }
+        !*background-color: #f4f4f4;*!
+    }*/
     h1,h2,h3,h4 {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -84,10 +84,9 @@
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
     }
-
-.content {
-    padding: 0 20px;
-}
+    .content {
+        padding: 0 20px;
+    }
 
 
 </style>
