@@ -31,7 +31,8 @@
     <meta name="twitter:image" content={image} />
 
     {#if browser}
-        <script async src="https://cozycal.com/embed/v1/9375.js"></script>
+        <script src="https://cozycal.com/embed/iframe/9375.js"></script>
+<!--        <script async src="https://cozycal.com/embed/v1/9375.js"></scrip>-->
     {/if}
 </svelte:head>
 
