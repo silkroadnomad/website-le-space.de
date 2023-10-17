@@ -20,7 +20,7 @@
                 Whether you're exploring new tech endeavors or refining existing systems, we are equipped to guide you through the intricacies of the IT world. (more...)</li>
             <p>&nbsp;</p>
             <li><strong>(New!) <span style="color: orange"> Peer Programming Sessions:</span></strong><br><br>
-                Beyond traditional IT-consulting, we're proud to introduce our Virtual Peer Programming Sessions <span style="color: orange"><strong> starting in Oktober 2023 with JDoc and e2e-Tests </strong></span> with Cypress.
+                Beyond traditional IT-consulting, we're proud to introduce our Virtual Peer Programming Sessions <span style="color: orange"><strong> starting in Oktober 2023 with JSDoc and e2e-Tests </strong></span> with Cypress.
                 These are specially designed for programmers and IT professionals, to ensure code quality and speed up the project time line. (more...)</li>
             <p>&nbsp;</p>
 <!--           <li><strong>Remote Work Consulting:</strong>
@@ -32,11 +32,6 @@
                 We understand the nuances of space design, community building, and logistical management, ensuring a harmonious blend of productivity and collaboration.</li>
             <p>&nbsp;</p>-->
         </ul>
-<!--        https://support.cozycal.com/gdpr-data-processing-agreement-->
-        <p>&nbsp;</p>
-        <h6>Impressum: <br/>Le Space UG (haftungsbeschränkt), Lichtenberg 44, D-84307 Eggenfelden, Germany
-            <br/>Tel.: +49 8721 128 9600-0
-            <br/>Email: contact @ le-space.de</h6>
     </div>
 </div>
 

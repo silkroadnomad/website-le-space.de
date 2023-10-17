@@ -14,6 +14,7 @@
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
     const favicon = "./favicon.ico"
+
 </script>
 <svelte:head>
     <title>{title}</title>
@@ -30,15 +31,14 @@
     <meta name="twitter:image" content={image} />
 
     {#if browser}
-<!--        <script async src="https://cozycal.com/embed/v1/9375.js"></script>-->
+        <script async src="https://cozycal.com/embed/v1/9375.js"></script>
     {/if}
 </svelte:head>
 
-<Header company="Le Space" platformName="IT-Consulting">
+<Header company="Le Space" platformName="IT-Consulting" href="/">
     <HeaderNav>
-<!--        <HeaderNavItem href="/" text="About" />
-        <HeaderNavItem href="/" text="References" />
-        <HeaderNavItem href="/" text="Impressum" />-->
+        <HeaderNavItem href="/gdpr" text="Data Protection" />
+        <HeaderNavItem href="/imprint" text="Imprint" />
     </HeaderNav>
     <HeaderNav>
         <Grid fullWidth>
