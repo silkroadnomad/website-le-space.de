@@ -73,13 +73,17 @@
         padding: 0;
         /*background-color: #f4f4f4;*/
     }
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 15px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+    h1,h2,h3,h4 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 15px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
 
 .content {
     padding: 0 20px;
