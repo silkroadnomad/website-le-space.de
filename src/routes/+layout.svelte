@@ -63,6 +63,7 @@
         company="Le Space"
         platformName="IT-Consulting"
         href="/">
+
     <HeaderNav>
     </HeaderNav>
     <HeaderUtilities>
@@ -79,7 +80,7 @@
               }}/>
         </HeaderGlobalAction>
 
-        <HeaderGlobalAction aria-label="language" >
+<!--        <HeaderGlobalAction aria-label="language" >
                 <Dropdown
                     class="flags"
                     size="sm"
@@ -93,7 +94,7 @@
                         {#if item.id==="de"}<De />{/if}
                         {#if item.id==="en"}<Gb />{/if}
                 </Dropdown>
-        </HeaderGlobalAction>
+        </HeaderGlobalAction>-->
 
     </HeaderUtilities>
 </Header>
@@ -116,13 +117,13 @@
 {/if}
 <style>
     :global(.flags) {
-        /*padding: 15px;*/
+       background: black !important; /*padding: 15px;*/
         /*margin-top: 15px;*/
 
     }
     :global(.bx--list-box__menu-item, .bx--list-box__menu-item__option) {
         height: auto;
-        /*background: black;*/
+        background: black;
         /*padding:10px*/
     }
 </style>
