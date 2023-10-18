@@ -14,8 +14,8 @@
             Nico Krause</p>
 
         <h2>Kontakt</h2>
-        <p>Telefon: +49872112896000<br />
-            Telefax: +498721-12896009<br />
+        <p>Telefon: +498721-1289600-0<br />
+            Telefax: +498721-1289600-9<br />
             E-Mail: info@le-space.de</p>
 
         <h2>Umsatzsteuer-ID</h2>

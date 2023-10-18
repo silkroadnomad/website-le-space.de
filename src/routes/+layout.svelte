@@ -2,6 +2,7 @@
     import { browser } from '$app/environment'
     import { locale, isLoading, waitLocale } from 'svelte-i18n'
     import '$lib/i18n' //locales
+    import { Dropdown } from "carbon-components-svelte";
     import { De,Gb } from 'svelte-flag-icons';
     import {PUBLIC_WEB_URL} from "$env/static/public";
 
@@ -63,12 +64,10 @@
         platformName="IT-Consulting"
         href="/">
     <HeaderNav>
-<!--        <HeaderNavItem href="/gdpr" text="Data Protection" />
-        <HeaderNavItem href="/imprint" text="Imprint" />-->
     </HeaderNav>
     <HeaderUtilities>
 
-        <HeaderGlobalAction aria-label="German">
+        <HeaderGlobalAction aria-label="dark-mode">
         <Theme
                 render="toggle"
                 toggle={{
@@ -79,8 +78,23 @@
                             size: "sm",
               }}/>
         </HeaderGlobalAction>
-        <HeaderGlobalAction aria-label="German" icon={De} />
-        <HeaderGlobalAction aria-label="English" icon={Gb} />
+
+        <HeaderGlobalAction aria-label="language" >
+                <Dropdown
+                    class="flags"
+                    size="sm"
+                    bind:selectedId={$locale}
+                    items={[
+                        { id: "de", text: "DE" },
+                        { id: "en", text: "EN" }
+                      ]}
+                    let:item
+                    >
+                        {#if item.id==="de"}<De />{/if}
+                        {#if item.id==="en"}<Gb />{/if}
+                </Dropdown>
+        </HeaderGlobalAction>
+
     </HeaderUtilities>
 </Header>
 {#if $isLoading}
@@ -95,8 +109,20 @@
                 <SideNavMenuItem href="/" text="Link 1" />
                 <SideNavMenuItem href="/" text="Link 2" />
                 <SideNavMenuItem href="/" text="Link 3" />
-            </SideNavMenu>-->
+            </SideNavMenu> _-->
         </SideNavItems>
     </SideNav>
 <slot></slot>
 {/if}
+<style>
+    :global(.flags) {
+        /*padding: 15px;*/
+        /*margin-top: 15px;*/
+
+    }
+    :global(.bx--list-box__menu-item, .bx--list-box__menu-item__option) {
+        height: auto;
+        /*background: black;*/
+        /*padding:10px*/
+    }
+</style>
