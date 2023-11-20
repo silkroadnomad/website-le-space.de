@@ -5,7 +5,8 @@
     import { Dropdown } from "carbon-components-svelte";
     import { De,Gb } from 'svelte-flag-icons';
     import {PUBLIC_WEB_URL} from "$env/static/public";
-
+    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
+    import '@beyonk/gdpr-cookie-consent-banner/banner.css' // optional, you can also define your own styles
     import "carbon-components-svelte/css/all.css";
     import {
         Theme, Header,
@@ -27,6 +28,10 @@
 
     let isSideNavOpen = false;
 
+    let gdprBanner
+
+    // gdprBanner.show()
+
     export const load = async () => {
         if (browser) {
             console.log("setting lang:",window.navigator.language)
@@ -34,6 +39,7 @@
         }
         await waitLocale()
     }
+    const initAnalytics = () => {console.log("test")}
 </script>
 <svelte:head>
     <title>{title}</title>
@@ -55,8 +61,9 @@
 
 <!--        <script async src="https://cozycal.com/embed/v1/9375.js"></scrip>-->
     {/if}
-</svelte:head>
 
+</svelte:head>
+<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies... (sorry for that) " on:analytics={initAnalytics} />
 <Header
         persistentHamburgerMenu={true}
         bind:isSideNavOpen
