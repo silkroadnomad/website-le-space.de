@@ -12,8 +12,9 @@
             </Column>-->
             <Column>
                 <div class="title-text">
-                    <h1>Welcome   <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
-                    <p>innovations in IT and software</p>
+                    <h1>Welcome
+                        <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
+                        <p>Local First Software In Global Working & Living Environments</p>
                 </div>
             </Column>
         </Row>
@@ -29,7 +30,7 @@
     }
 
     .logo {
-        width: 35px;
+        width: 70px;
         display: inline-block;
     }
     .banner {

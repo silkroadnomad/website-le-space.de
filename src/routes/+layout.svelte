@@ -20,8 +20,8 @@
     } from "carbon-components-svelte";
     import { _ } from 'svelte-i18n'
 
-    const title = "Le Space - IT & Software Consulting"
-    const description = "General IT- and Technology Consulting, Virtual Coworking, Peer Programming Sessions, Remote Work Consulting, Coworking Consultationn"
+    const title = "Le Space - Local First Software In Global Working & Living Environments"
+    const description = "General IT- and Technology Consulting, Virtual Coworking, Peer Programming Sessions, Remote Work Consulting, Coworking Consulting"
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"le-space-ug.png"
     const favicon = "./favicon.ico"
@@ -39,7 +39,7 @@
         }
         await waitLocale()
     }
-    const initAnalytics = () => {console.log("test")}
+    const initAnalytics = () => {console.log("initAnalytics")}
 </script>
 <svelte:head>
     <title>{title}</title>
@@ -63,7 +63,7 @@
     {/if}
 
 </svelte:head>
-<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies... (sorry for that) " on:analytics={initAnalytics} />
+<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies...  " on:analytics={initAnalytics} />
 <Header
         persistentHamburgerMenu={true}
         bind:isSideNavOpen
