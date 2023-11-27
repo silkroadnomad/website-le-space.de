@@ -1,7 +1,5 @@
 <script>
-    import {
-        Column, Row, Grid,
-    } from "carbon-components-svelte";
+    import { Column, Row, Grid } from "carbon-components-svelte"
 </script>
 
 <section class="banner" id="home">
@@ -33,9 +31,11 @@
         width: 70px;
         display: inline-block;
     }
+
     .banner {
         height: 160px;
         text-align: center;
+       /* background: white;!**!*/
         /*background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);*/
         background-size: cover;
     }
