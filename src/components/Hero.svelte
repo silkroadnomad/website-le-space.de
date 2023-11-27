@@ -11,9 +11,8 @@
             </Column>-->
             <Column>
                 <div class="title-text">
-                    <h1>Welcome
-                        <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
-                        <p>{headline}</p>
+                    <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" />
+                        <h4>{headline} </h4>
                 </div>
             </Column>
         </Row>
@@ -25,11 +24,12 @@
 <style>
     .logo-container {
         text-align: center;
-        margin-bottom: 40px;
+        margin-top: 40px;
     }
 
     .logo {
-        width: 70px;
+        width: 90px;
+        margin: 0.5rem;
         display: inline-block;
     }
 
