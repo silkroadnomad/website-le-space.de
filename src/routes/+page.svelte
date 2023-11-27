@@ -9,40 +9,11 @@
     import LabWeek2023LibP2P01 from "$lib/assets/2023-labweek-libp2p-01.png"
     import Vienna2023Svelte from "$lib/assets/2023-vienna-svelte-02.png"
 
-    import AloneWorkingGoaSunsetMediation01 from "$lib/assets/alone-working-goa-sunset-mediation-01.png";
-    import AloneWorkingGoaSunsetMediation02 from "$lib/assets/alone-working-goa-sunset-mediation-02.png";
     import BitcoinCore01 from "$lib/assets/bitcoin-core-01.png"
-
-    import BuenosAiresCoworking01 from "$lib/assets/buenos-aires-coworking-01.png";
-    import BuenosAiresCoworking02 from "$lib/assets/buenos-aires-coworking-02.png";
-    import CoworkingBali01 from "$lib/assets/coworking-bali-01.png";
-    import CoworkingBali02 from "$lib/assets/coworking-bali-02.png";
-    import CoworkingEkb01 from "$lib/assets/coworking-ekb-01.png";
-    import CoworkingEkb02 from "$lib/assets/coworking-ekb-02.png";
-    import CoworkingGoa01 from "$lib/assets/coworking-goa-01.png";
-    import CoworkingGoa02 from "$lib/assets/coworking-goa-02.png";
-    import CoworkingGoaSunsetMediation01 from "$lib/assets/coworking-goa-sunset-mediation-01.png";
-    import CoworkingGoaSunsetMediation02 from "$lib/assets/coworking-goa-sunset-mediation-02.png";
     import CoworkingLeipzig01 from "$lib/assets/coworking-leipzig-01.png";
-    import CoworkingLeipzig02 from "$lib/assets/coworking-leipzig-02.png";
-    import CoworkingLeipzigFuture01 from "$lib/assets/coworking-leipzig-future-01.png";
-    import CoworkingLeipzigFuture02 from "$lib/assets/coworking-leipzig-future-02.png";
-    import JungleWorking01 from "$lib/assets/jungle-working-01.png";
-    import JungleWorking02 from "$lib/assets/jungle-working-02.png";
+
     import KarakorumWorking01 from "$lib/assets/karakorum-working-01.png";
-    import KarakorumWorking02 from "$lib/assets/karakorum-working-02.png";
-    import VsaJump01 from "$lib/assets/vsa-jump-01.png";
     import VsaJump02 from "$lib/assets/vsa-jump-02.png";
-    import VsaJump03 from "$lib/assets/vsa-jump-03.png";
-    import VsaJump04 from "$lib/assets/vsa-jump-04.png";
-    import VsaJump05 from "$lib/assets/vsa-jump-05.png";
-    import VsaJump06 from "$lib/assets/vsa-jump-06.png";
-    import Webrtc01 from "$lib/assets/webrtc-01.png";
-    import Webrtc02 from "$lib/assets/webrtc-02.png";
-    import Webrtc03 from "$lib/assets/webrtc-03.png";
-    import Webrtc04 from "$lib/assets/webrtc-04.png";
-    import Webrtc05 from "$lib/assets/webrtc-05.png";
-    import Webrtc06 from "$lib/assets/webrtc-06.png";
 
     let currentPage = 0
     let carousel
@@ -93,7 +64,6 @@
         c.classList.add('visible');
     }
 
-
     onMount(() => {
         window.addEventListener('keydown', handleKeydown);
         return () => {
@@ -103,12 +73,13 @@
 
     const timeline = [
         { image: LabWeek2023LibP2P01, year:"2023", headline: "Local First Software, Peer-To-Peer",  location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
-        { image: Vienna2023Svelte, year:"2023", headline: "Svelte Development",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, Javascript, Cypress, JSDoc'},
+        { image: Vienna2023Svelte, year:"2023", headline: "Svelte Development",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, Javascript, Cypress, Playwright, JSDoc'},
         { image: BitcoinCore01, year:"2011", headline: "Bitcoin Principles",  location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core '},
         { image: KarakorumWorking01, year:"2011", headline: "Silk Road Inspirations",  location: " Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural competence'},
         { image: CoworkingLeipzig01, year:"2009", headline: "Opening Le Space (beta) Coworking zu Leipzig",  location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010), ', technologies: 'Coworking, Bar Camps, Events'},
         { image: VsaJump02, year:"2006", headline: "Java/J2EE development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
     ]
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
     <img src={timeline[currentPage].image} />

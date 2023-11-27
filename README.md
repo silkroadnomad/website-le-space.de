@@ -1,7 +1,8 @@
 # Website www.le-space.de
 
 ## TODOs
-- Hero banner
-- Deutsch/Englisch
-- Menü für Datenschutzvereinbarung und Impressum
-- fix SocialMedia image 
+- add more projects (e.g. OrbitDB Blog)
+- play video when fullscreen photo
+- buy as NFT
+- print t-shirt of NFT
+- social media 
