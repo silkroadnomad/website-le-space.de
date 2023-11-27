@@ -1,5 +1,6 @@
 <script>
     import { Column, Row, Grid } from "carbon-components-svelte"
+    export let headline = "Global Working Environments"
 </script>
 
 <section class="banner" id="home">
@@ -12,7 +13,7 @@
                 <div class="title-text">
                     <h1>Welcome
                         <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
-                        <p>Local First Software In Global Working & Living Environments</p>
+                        <p>{headline} & Global Working and Living Environments</p>
                 </div>
             </Column>
         </Row>

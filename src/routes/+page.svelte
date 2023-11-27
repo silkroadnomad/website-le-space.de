@@ -47,15 +47,6 @@
     let currentPage = 0
     let carousel
     let showImage
-    const timeline = [
-        { image: LabWeek2023LibP2P01, year:"2023", headline: "Labweek2023 Istanbul",  location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
-        { image: Vienna2023Svelte, year:"2023", headline: "Svelte in Vienna, Austria",  location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
-
-        { image: BitcoinCore01, year:"2011", headline: "Rishikesh, India",  location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core '},
-        { image: KarakorumWorking01, year:"2011", headline: "Silk Road",  location: " Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural competence'},
-        { image: CoworkingLeipzig01, year:"2009", headline: "Opening Le Space (beta) Coworking zu Leipzig",  location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010), ', technologies: 'Coworking, Bar Camps, Events'},
-        { image: VsaJump02, year:"2006", headline: "Java/J2EE development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
-    ]
 
     function handleKeydown(event) {
         switch (event.key) {
@@ -109,6 +100,15 @@
             window.removeEventListener('keydown', handleKeydown);
         };
     });
+
+    const timeline = [
+        { image: LabWeek2023LibP2P01, year:"2023", headline: "Local First Software, Peer-To-Peer",  location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
+        { image: Vienna2023Svelte, year:"2023", headline: "Svelte Development",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, Javascript, Cypress, JSDoc'},
+        { image: BitcoinCore01, year:"2011", headline: "Bitcoin Principles",  location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core '},
+        { image: KarakorumWorking01, year:"2011", headline: "Silk Road Inspirations",  location: " Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural competence'},
+        { image: CoworkingLeipzig01, year:"2009", headline: "Opening Le Space (beta) Coworking zu Leipzig",  location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010), ', technologies: 'Coworking, Bar Camps, Events'},
+        { image: VsaJump02, year:"2006", headline: "Java/J2EE development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
+    ]
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
     <img src={timeline[currentPage].image} />
@@ -117,7 +117,7 @@
     <Row>
         <Column>
             <div on:dblclick={showBackground}  role="button" tabindex="0">
-                <Hero/>
+                <Hero headline={timeline[currentPage].headline}/>
             </div>
         </Column>
     </Row>
@@ -126,6 +126,7 @@
             <div id="carousel" class="visible" >
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
+                    <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
                     <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01} />
                     <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01} />
                     <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01} />
