@@ -21,7 +21,7 @@
 
     let currentPage = 0
     let carousel
-    let showImage
+    let showImage = true
 
     function handleKeydown(event) {
         switch (event.key) {
@@ -43,6 +43,8 @@
             case ' ':
                 showImage = !showImage
                 showImage?hideBackground():showBackground()
+
+
                 break;
         }
     }
