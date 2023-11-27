@@ -13,7 +13,7 @@
                 <div class="title-text">
                     <h1>Welcome
                         <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" /> Le Space</h1>
-                        <p>{headline} & Global Working and Living Environments</p>
+                        <p>{headline}</p>
                 </div>
             </Column>
         </Row>
