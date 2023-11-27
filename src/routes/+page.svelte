@@ -4,6 +4,9 @@
     import {_, isLoading, locale} from "svelte-i18n";
     import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
+    import DiJavascript1 from 'svelte-icons/di/DiJavascript1.svelte'
+    import DiReact from 'svelte-icons/di/DiReact.svelte'
+
     import CarouselImage from "../components/CarouselImage.svelte";
 
     import LabWeek2023LibP2P01 from "$lib/assets/2023-labweek-libp2p-01.png"
@@ -71,18 +74,18 @@
             window.removeEventListener('keydown', handleKeydown);
         };
     });
-
+    /**
+     * Icons from: https://simpleicons.org/?q=ipfs
+     */
     const timeline = [
-        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
-        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc'},
-        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs'},
+        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:"ipfs",color:"#65C2CB"},{icon:"svelte",color:"#FF3E00"}]},
+        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon:"javascript",color:"#65C2CB"},{icon:"svelte",color:"#65C2CB"},{icon:"cypress",color:"#65C2CB"}]},
+        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs',  icons:[{icon:"javascript",color:"#61DAFB"},DiReact]},
         { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core'},
         { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
         { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
         { image: VsaJump02, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
     ];
-
-
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
     <img src={timeline[currentPage].image} />
@@ -108,12 +111,24 @@
                     <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump02} />
                 </Carousel>
             </div>
-
+        </Column>
+    </Row>
+    <Row>
+        <Column>
             <div class="info-panel">
                 <p>Year: {timeline[currentPage].year}</p>
                 <p>Location: {timeline[currentPage].location}</p>
                 <p>Projects: {timeline[currentPage].projects}</p>
                 <p>Tech:  {timeline[currentPage].technologies}</p>
+            </div>
+        </Column>
+        <Column>
+            <div class="icon-panel">
+                {#if timeline[currentPage]?.icons}
+                    {#each timeline[currentPage].icons as icon}
+                        <img height="32" width="32" style="padding: 5px; background:{icon.color}" src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/{icon.icon}.svg" />
+                    {/each}
+                {/if}
             </div>
         </Column>
     </Row>
@@ -153,14 +168,19 @@
     :global(.grid) {
         margin-top: 2rem;
     }
-
     .info-panel {
         background-color: black;
         color: #0F0; /* Bright green color */
         text-shadow: 0 0 10px #0F0; /* Green glow effect */
         font-family: 'Courier New', monospace; /* Monospaced font for a classic look */
-        width: 30%;
+        width: 100%;
         align-content: center;
+        margin-left: 2rem;
+        margin-right: 10rem;
+        padding: 0.5rem;
+    }
+
+    .icon-panel {
         margin-left: 2rem;
         margin-right: 10rem;
         padding: 0.5rem;
