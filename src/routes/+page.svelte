@@ -1,11 +1,22 @@
 <script>
     import { onMount } from 'svelte';
     import Hero from "../components/Hero.svelte"
+    import * as allIcons from "@icons-pack/svelte-simple-icons"
     import {_, isLoading, locale} from "svelte-i18n";
     import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
-    import DiJavascript1 from 'svelte-icons/di/DiJavascript1.svelte'
-    import DiReact from 'svelte-icons/di/DiReact.svelte'
+    import {
+        Ipfs,
+        Oracle,
+        Svelte,
+        Javascript,
+        Cypress,
+        Python,
+        C,
+        React,
+        Eclipseide, Bitcoin, Docker
+    } from '@icons-pack/svelte-simple-icons';
+
 
     import CarouselImage from "../components/CarouselImage.svelte";
 
@@ -17,11 +28,22 @@
     import CoworkingLeipzig01 from "$lib/assets/coworking-leipzig-01.png";
 
     import KarakorumWorking01 from "$lib/assets/karakorum-working-01.png";
-    import VsaJump02 from "$lib/assets/vsa-jump-02.png";
+    import VsaJump07 from "$lib/assets/vsa-jump-07.png";
 
     let currentPage = 0
     let carousel
     let showImage = true
+
+    const iconMap = {
+        'javascript': Javascript,
+        'python': Python,
+        'react': React,
+        'ipfs': Ipfs,
+        'oracle': Oracle,
+        'svelte': Svelte,
+        'cypress': Cypress
+        // ... add other icons as needed
+    };
 
     function handleKeydown(event) {
         switch (event.key) {
@@ -70,24 +92,35 @@
         c.classList.add('visible');
     }
 
+    async function importIcon (icon){
+        const iconName = icon.icon
+        // console.log("iconName",iconName)
+        // const _icon = await import(`@icons-pack/svelte-simple-icons`)
+        const Icon = allIcons[iconName] //_icon.Abbott
+        console.log("icon.default", Icon)
+        return Icon
+    }
+
     onMount(() => {
         window.addEventListener('keydown', handleKeydown);
         return () => {
             window.removeEventListener('keydown', handleKeydown);
         };
     });
+
     /**
      * Icons from: https://simpleicons.org/?q=ipfs
      */
     const timeline = [
-        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:"ipfs",color:"#65C2CB"},{icon:"svelte",color:"#FF3E00"}]},
-        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon:"javascript",color:"##F7DF1E"},{icon:"svelte",color:"#FF3E00"},{icon:"playwright", color:"#2EAD33"}, {icon:"cypress",color:"#17202C"}]},
-        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs',  icons:[{icon:"ipfs",color:"#65C2CB"},{icon:"react",color:"#61DAFB"},{icon:"javascript",color:"#F7DF1E"}]},
-        { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core',icons:[{icon:"bitcoin",color:"#F7931A"}]},
+        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:Ipfs,color:"#65C2CB"},{icon:Svelte,color:"#FF3E00"}]},
+        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: Javascript,color:"##F7DF1E"},{icon:Svelte, color:"#FF3E00"}, {icon:Cypress, color:"#17202C"}]},
+        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs',  icons:[{icon:Ipfs,color:"#65C2CB"},{icon:React,color:"#61DAFB"}, {icon:Javascript, color:"#F7DF1E"}, {icon:Docker, color:"#2496ED"}]},
+        { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core',icons:[{icon:Bitcoin,color:"#F7931A"}]},
         { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
         { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
-        { image: VsaJump02, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB',  icons:[{icon:"oracle",color:"#F80000"},{icon:"eclipseide",color:"eclipseide"}]},
+        { image: VsaJump07, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB',  icons:[{icon:Oracle,color:"#F80000"},{icon:Eclipseide,color:"#2C2255"}]},
     ];
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
     <img src={timeline[currentPage].image} />
@@ -110,7 +143,7 @@
                     <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01} />
                     <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01} />
                     <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01} />
-                    <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump02} />
+                    <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump07} />
                 </Carousel>
             </div>
         </Column>
@@ -127,8 +160,10 @@
         <Column>
             <div class="icon-panel">
                 {#if timeline[currentPage]?.icons}
-                    {#each timeline[currentPage].icons as icon}
-                        <img height="32" width="32" style="padding: 5px; background:{icon.color}" src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/{icon.icon}.svg" />
+                    { #each timeline[currentPage].icons as icon }
+                        {#if icon}
+                            <svelte:component this={icon.icon} color={icon.color} style={'padding:1rem'}/>
+                        {/if}
                     {/each}
                 {/if}
             </div>

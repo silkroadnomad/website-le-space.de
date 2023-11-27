@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@icons-pack/svelte-simple-icons": "^3.0.0",
+		"programming-languages-logos": "^0.0.3",
 		"svelte-carousel": "^1.0.25"
 	}
 }
