@@ -72,13 +72,14 @@
     });
 
     const timeline = [
-        { image: LabWeek2023LibP2P01, year:"2023", headline: "Local First Software, Peer-To-Peer",  location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
-        { image: Vienna2023Svelte, year:"2023", headline: "Svelte Development",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, Javascript, Cypress, Playwright, JSDoc'},
-        { image: BitcoinCore01, year:"2011", headline: "Bitcoin Principles",  location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core '},
-        { image: KarakorumWorking01, year:"2011", headline: "Silk Road Inspirations",  location: " Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural competence'},
-        { image: CoworkingLeipzig01, year:"2009", headline: "Opening Le Space (beta) Coworking zu Leipzig",  location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010), ', technologies: 'Coworking, Bar Camps, Events'},
-        { image: VsaJump02, year:"2006", headline: "Java/J2EE development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
-    ]
+        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software, Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia'},
+        { image: Vienna2023Svelte, year: "2023", headline: "Svelte Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc'},
+        { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core'},
+        { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
+        { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", location: "Leipzig, Germany", projects: 'Founding a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
+        { image: VsaJump02, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB'},
+    ];
+
 
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
