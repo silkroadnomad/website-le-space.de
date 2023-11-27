@@ -162,7 +162,10 @@
                 {#if timeline[currentPage]?.icons}
                     { #each timeline[currentPage].icons as icon }
                         {#if icon}
-                            <svelte:component this={icon.icon} color={icon.color} style={'padding:1rem'}/>
+                            <svelte:component this={icon.icon}
+                                              title={ icon.name }
+                                              color={icon.color}
+                                              style={'margin:10px'}/>
                         {/if}
                     {/each}
                 {/if}
