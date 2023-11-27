@@ -95,7 +95,7 @@
     </Row>
     <Row>
         <Column class="carousel">
-            <div id="carousel" class="visible" >
+            <div id="carousel" class="visible" on:dblclick={showBackground}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
                     <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
