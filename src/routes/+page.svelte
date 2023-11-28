@@ -158,7 +158,7 @@
             </div>
         </Column>
         <Column>
-            <div class="icon-panel">test
+            <div class="icon-panel">
                 <!--                {#if timeline[currentPage]?.icons}
                               { #each timeline[currentPage].icons as icon }
                                      <script>
