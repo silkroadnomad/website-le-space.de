@@ -158,8 +158,20 @@
             </div>
         </Column>
         <Column>
-            <div class="icon-panel">
-
+            <div class="icon-panel">test
+                <!--                {#if timeline[currentPage]?.icons}
+                              { #each timeline[currentPage].icons as icon }
+                                     <script>
+                                         console.log("icon.icon",icon.icon);
+                                     </script>
+                                     {#if icon && icon.icon}
+                                         <svelte:component this={icon?.icon}
+                                                           title={ icon?.name }
+                                                           color={icon?.color}
+                                                           style={'margin:10px'}/>
+                                     {/if}
+                                 {/each}
+                {/if}-->
             </div>
         </Column>
     </Row>
