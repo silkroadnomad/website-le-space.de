@@ -143,7 +143,7 @@
         </Column>
         <Column>
             <div class="icon-panel">
-              {#if timeline[currentPage]?.icons}
+              {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
                       { #each timeline[currentPage].icons as icon }
                              {#if icon && icon?.icon}
                                  <svelte:component this={icon?.icon}
