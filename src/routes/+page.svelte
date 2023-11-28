@@ -79,9 +79,10 @@
         c.classList.remove('hidden');
         c.classList.add('visible');
     }
-    function swipe(e){
-        console.log("swipe stuff",e)
+    function doSwipe(e){
+        console.log("doSwipe stuff",e)
     }
+
     onMount(() => {
         window.addEventListener('keydown', handleKeydown);
         return () => {
@@ -104,7 +105,7 @@
 
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
-     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={swipe}>
+     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
     <img src={timeline[currentPage].image} />
 </div>
 <Grid class="grid">
@@ -118,7 +119,7 @@
     <Row>
         <Column class="carousel">
             <div id="carousel" class="visible" on:dblclick={showBackground}
-                 use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={swipe}>
+                 use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
                     <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
