@@ -160,9 +160,9 @@
         <Column>
             <div class="icon-panel">
                 {#if timeline[currentPage]?.icons}
-                    { #each timeline[currentPage].icons as icon }
+   <!--                 { #each timeline[currentPage].icons as icon }
                         <script>
-                            console.log(icon.icon);
+                            console.log("icon.icon",icon.icon);
                         </script>
                         {#if icon && icon.icon}
                             <svelte:component this={icon?.icon}
@@ -170,7 +170,7 @@
                                               color={icon?.color}
                                               style={'margin:10px'}/>
                         {/if}
-                    {/each}
+                    {/each}-->
                 {/if}
             </div>
         </Column>
