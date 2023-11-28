@@ -161,7 +161,7 @@
             <div class="icon-panel">
                 {#if timeline[currentPage]?.icons}
                     { #each timeline[currentPage].icons as icon }
-                        {#if icon}
+                        {#if icon && icon.icon}
                             <svelte:component this={icon.icon}
                                               title={ icon.name }
                                               color={icon.color}
