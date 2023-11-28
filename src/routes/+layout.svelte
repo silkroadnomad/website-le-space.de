@@ -23,7 +23,7 @@
     const title = "Le Space - Local First Software In Global Working & Living Environments"
     const description = "General IT- and Technology Consulting, Virtual Coworking, Peer Programming Sessions, Remote Work Consulting, Coworking Consulting"
     const url = "https://le-space.de"
-    const image = PUBLIC_WEB_URL+"le-space-ug.png"
+    const image = PUBLIC_WEB_URL+"/le-space-ug.png"
     const favicon = "./favicon.ico"
 
     let isSideNavOpen = false;
