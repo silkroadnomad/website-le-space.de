@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { swipe } from 'svelte-gestures';
     import Hero from "../components/Hero.svelte"
     import * as allIcons from "@icons-pack/svelte-simple-icons"
     import {_, isLoading, locale} from "svelte-i18n";
@@ -16,8 +17,6 @@
         React,
         Eclipseide, Bitcoin, Docker
     } from '@icons-pack/svelte-simple-icons';
-
-
     import CarouselImage from "../components/CarouselImage.svelte";
 
     import LabWeek2023LibP2P01 from "$lib/assets/2023-labweek-libp2p-01.png"
@@ -33,17 +32,6 @@
     let currentPage = 0
     let carousel
     let showImage = true
-
-    const iconMap = {
-        'javascript': Javascript,
-        'python': Python,
-        'react': React,
-        'ipfs': Ipfs,
-        'oracle': Oracle,
-        'svelte': Svelte,
-        'cypress': Cypress
-        // ... add other icons as needed
-    };
 
     function handleKeydown(event) {
         switch (event.key) {
@@ -91,16 +79,9 @@
         c.classList.remove('hidden');
         c.classList.add('visible');
     }
-
-    async function importIcon (icon){
-        const iconName = icon.icon
-        // console.log("iconName",iconName)
-        // const _icon = await import(`@icons-pack/svelte-simple-icons`)
-        const Icon = allIcons[iconName] //_icon.Abbott
-        console.log("icon.default", Icon)
-        return Icon
+    function swipe(e){
+        console.log("swipe stuff",e)
     }
-
     onMount(() => {
         window.addEventListener('keydown', handleKeydown);
         return () => {
@@ -122,20 +103,22 @@
     ];
 
 </script>
-<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
+<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
+     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={swipe}>
     <img src={timeline[currentPage].image} />
 </div>
 <Grid class="grid">
     <Row>
         <Column>
-            <div on:dblclick={showBackground}  role="button" tabindex="0">
+            <div on:dblclick={showBackground} role="button" tabindex="0">
                 <Hero headline={timeline[currentPage].headline}/>
             </div>
         </Column>
     </Row>
     <Row>
         <Column class="carousel">
-            <div id="carousel" class="visible" on:dblclick={showBackground}>
+            <div id="carousel" class="visible" on:dblclick={showBackground}
+                 use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={swipe}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
                     <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
@@ -159,18 +142,18 @@
         </Column>
         <Column>
             <div class="icon-panel">
-                      {#if timeline[currentPage]?.icons}
-                              { #each timeline[currentPage].icons as icon }
-                                     <script>
-                                         console.log("icon.icon",icon.icon);
-                                     </script>
-                                     {#if icon && icon?.icon}
-                                         <svelte:component this={icon?.icon}
-                                                           title={icon?.name }
-                                                           color={icon?.color}
-                                                           style={'margin:10px'}/>
-                                     {/if}
-                                 {/each}
+              {#if timeline[currentPage]?.icons}
+                      { #each timeline[currentPage].icons as icon }
+                             <script>
+                                 console.log("icon.icon",icon.icon);
+                             </script>
+                             {#if icon && icon?.icon}
+                                 <svelte:component this={icon?.icon}
+                                                   title={icon?.name }
+                                                   color={icon?.color}
+                                                   style={'margin:10px'}/>
+                             {/if}
+                         {/each}
                 {/if}
             </div>
         </Column>
