@@ -102,7 +102,7 @@
 
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
-     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={handler}>
+     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe()}>
     <img src={timeline[currentPage].image} />
 </div>
 <Grid class="grid">
