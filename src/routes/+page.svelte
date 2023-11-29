@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import Hero from "../components/Hero.svelte"
-    // import * as allIcons from "@icons-pack/svelte-simple-icons"
+    import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
     import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
@@ -67,8 +67,11 @@
         c.classList.remove('hidden');
         c.classList.add('visible');
     }
+    let direction;
     function doSwipe(e){
-        console.log("doSwipe stuff",e)
+        direction = e.detail.direction;
+        console.log("doSwipe direction",direction)
+        hideBackground()
     }
 
     onMount(() => {
@@ -98,7 +101,8 @@
     ];
 
 </script>
-<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}>
+<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
+     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={handler}>
     <img src={timeline[currentPage].image} />
 </div>
 <Grid class="grid">
