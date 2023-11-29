@@ -147,8 +147,11 @@
                       { #each timeline[currentPage].icons as icon }
                              {#if icon && icon?.icon && icon?.color}
                                  <svelte:component this={icon?.icon || ''}
+                                                   title={icon?.name || 'no name' }
                                                    color={icon?.color || ''}
                                                    style={'margin:10px'}/>
+                             {:else}
+                                 no icon
                              {/if}
                          {/each}
                 {/if}
