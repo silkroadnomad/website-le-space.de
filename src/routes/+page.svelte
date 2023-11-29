@@ -2,21 +2,11 @@
     import { onMount } from 'svelte';
     import { swipe } from 'svelte-gestures';
     import Hero from "../components/Hero.svelte"
-    import * as allIcons from "@icons-pack/svelte-simple-icons"
+    // import * as allIcons from "@icons-pack/svelte-simple-icons"
     import {_, isLoading, locale} from "svelte-i18n";
     import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
-    import {
-        Ipfs,
-        Oracle,
-        Svelte,
-        Javascript,
-        Cypress,
-        Python,
-        C,
-        React,
-        Eclipseide, Bitcoin, Docker
-    } from '@icons-pack/svelte-simple-icons';
+
     import CarouselImage from "../components/CarouselImage.svelte";
 
     import LabWeek2023LibP2P01 from "$lib/assets/2023-labweek-libp2p-01.png"
@@ -54,8 +44,6 @@
             case ' ':
                 showImage = !showImage
                 showImage?hideBackground():showBackground()
-
-
                 break;
         }
     }
@@ -95,14 +83,14 @@
      * Icons from: https://simpleicons.org/?q=ipfs
      */
     const timeline = [
-        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Labweek23 Conference', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:Ipfs,color:"#65C2CB"},{icon:Svelte,color:"#FF3E00"}]},
-        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: Javascript,color:"##F7DF1E"},{icon:Svelte, color:"#FF3E00"}, {icon:Cypress, color:"#17202C"}]},
-        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs',  icons:[{icon:Ipfs,color:"#65C2CB"},{icon:React,color:"#61DAFB"}, {icon:Javascript, color:"#F7DF1E"}, {icon:Docker, color:"#2496ED"}]},
-        { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core',icons:[{icon:Bitcoin,color:"#F7931A"}]},
-        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing / Google WebToolkit Development", location: "Palma de Mallorca, Spain", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:Eclipseide,color:"#2C2255"}]},
-        { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
-        { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
-        { image: VsaJump07, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB',  icons:[{icon:Oracle,color:"#F80000"},{icon:Eclipseide,color:"#2C2255"}]},
+        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer", industry:"Blockchain / Crypto Currency", location: "Istanbul, Republic of Türkiye", projects: 'Attending Labweek23 Conference, LibP2P day, IPFSConnect', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:"libp2p"},{icon:"helia.png"},{icon:"ipfs"},{icon:"svelte"},{icon:"typescript"}]},
+        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", industry:"Pharmaceutical Industry",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI web app for a scientific platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript"}, {icon:"svelte"}, {icon:"cypress"}, {icon:"coffeescript"}]},
+        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Software Development / IT / Media",  location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs"}, {icon:"libp2p"}, {icon:"react"}, {icon:"javascript"}, {icon:"nodedotjs"}, {icon:"docker"}]},
+        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Health / Medical", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:"eclipseide"}]},
+/*        { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},*/
+        { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles / Groovy & Grails", industry:"IT administration", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin"}, {icon:"apachegroovy"},{icon:"mongodb"} ]},
+        { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", industry:"real estate", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
+        { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Development", industry:"health / medical", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"oracle"},{icon:"eclipseide"}]},
     ];
 
 </script>
@@ -126,8 +114,9 @@
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
                     <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
                     <CarouselImage css="object-position: 50% 70px" alt="Thailand2022OrbitDB" src={Thailand2022OrbitDB} />
+                    <CarouselImage css="object-position: 50% 30px;" alt="Mallorca2012Loft38Portixol01" src={Mallorca2012Loft38Portixol01} />
                     <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01} />
-                    <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01} />
+<!--                    <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01} />-->
                     <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01} />
                     <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump07} />
                 </Carousel>
@@ -138,24 +127,21 @@
         <Column>
             <div class="info-panel">
                 <p>Year: {timeline[currentPage].year}</p>
-                <p>Location: {timeline[currentPage].location}</p>
+                <p>Industry: {timeline[currentPage].industry}</p>
                 <p>Projects: {timeline[currentPage].projects}</p>
                 <p>Tech:  {timeline[currentPage].technologies}</p>
+                <p>Location: {timeline[currentPage].location}</p>
             </div>
         </Column>
         <Column>
             <div class="icon-panel">
               {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
                       { #each timeline[currentPage].icons as icon }
-                             {#if icon && icon?.icon && icon?.color}
+                             {#if icon}
+                              <img title={icon.icon.indexOf(".")===-1?icon.icon:icon.icon.substring(icon.icon.indexOf(".png"))}
+                                   src={icon.icon.indexOf(".")===-1?`/simple-icons/${icon.icon}.svg`:`/simple-icons/${icon.icon}`} style="margin: 0.3rem"
+                                                   height="42" width="42" />
 
-                                 <svelte:component this={icon?.icon} />
-                                <!-- <svelte:component this={icon?.icon || ''}
-                                                   title={icon?.name || 'no name' }
-                                                   color={icon?.color || ''}
-                                                   style={'margin:10px'}/>-->
-                             {:else}
-                                 no icon
                              {/if}
                          {/each}
                 {/if}
