@@ -27,6 +27,7 @@
     import CoworkingLeipzig01 from "$lib/assets/coworking-leipzig-01.png";
 
     import KarakorumWorking01 from "$lib/assets/karakorum-working-01.png";
+    import Mallorca2012Loft38Portixol01 from "$lib/assets/2012-LOFT38-01.png"
     import VsaJump07 from "$lib/assets/vsa-jump-07.png";
 
     let currentPage = 0
@@ -98,6 +99,7 @@
         { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", location: "Vienna, Republic of Austria", projects: 'Svelte-UI Frontend for a Scientific Pharmaceutical Platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: Javascript,color:"##F7DF1E"},{icon:Svelte, color:"#FF3E00"}, {icon:Cypress, color:"#17202C"}]},
         { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia", location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs',  icons:[{icon:Ipfs,color:"#65C2CB"},{icon:React,color:"#61DAFB"}, {icon:Javascript, color:"#F7DF1E"}, {icon:Docker, color:"#2496ED"}]},
         { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation', technologies: 'The Bitcoin Principles, Bitcoin Core',icons:[{icon:Bitcoin,color:"#F7931A"}]},
+        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing / Google WebToolkit Development", location: "Palma de Mallorca, Spain", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:Eclipseide,color:"#2C2255"}]},
         { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
         { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events'},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE Development", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, Oracle DB',  icons:[{icon:Oracle,color:"#F80000"},{icon:Eclipseide,color:"#2C2255"}]},
