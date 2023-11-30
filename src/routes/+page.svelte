@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { fly } from 'svelte/transition';
     import Hero from "../components/Hero.svelte"
     import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
@@ -94,7 +95,7 @@
         { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", industry:"Pharmaceutical Industry",  location: "Vienna, Republic of Austria", projects: 'Svelte-UI web app for a scientific platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {icon:"svelte", url: "https://svelte.dev/"}, {icon:"cypress", url: "https://www.cypress.io/"}, {icon:"coffeescript", url: "https://coffeescript.org/"}, {icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
         { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Software Development / IT / Media",  location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs", url: "https://ipfs.io/"}, {icon:"libp2p", url: "https://libp2p.io/"}, {icon:"react", url: "https://reactjs.org/"}, {icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"nginx", url: "https://docs.nginx.com/"}, {icon:"nodedotjs", url: "https://nodejs.org/en/"}, {icon:"metamask.png",url:"https://metamask.io"}, {icon:"docker", url: "https://www.docker.com/"}, {icon:"web3dotjs", url: "https://web3js.org/"}, {icon:"letsencrypt", url: "https://www.letsencrypt.org/"} , {icon:"openssl", url: "https://www.openssl.org/"}  ]},
         { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Health / Medical", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-/*        { image: KarakorumWorking01, year: "2011", headline: "Silk Road Inspirations", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},*/
+        { image: KarakorumWorking01, year: "2011", headline: "@ company  ", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
         { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles / Groovy & Grails", industry:"IT administration", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
         { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", industry:"real estate", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"lvz",url:"https://www.lvz.de"},{icon:"dnn",url:"https://www.dnn.de/"}]},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Development", industry:"health / medical", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
@@ -117,14 +118,28 @@
         <Column class="carousel">
             <div id="carousel" class="visible" on:dblclick={showBackground}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
-                    <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01} />
-                    <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte} />
-                    <CarouselImage css="object-position: 50% 70px" alt="Thailand2022OrbitDB" src={Thailand2022OrbitDB} />
-                    <CarouselImage css="object-position: 50% 30px;" alt="Mallorca2012Loft38Portixol01" src={Mallorca2012Loft38Portixol01} />
-                    <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01} />
+                    <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
+                    <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
+                    <CarouselImage css="object-position: 50% 70px" alt="Thailand2022OrbitDB" src={Thailand2022OrbitDB}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
+                    <CarouselImage css="object-position: 50% 30px;" alt="Mallorca2012Loft38Portixol01" src={Mallorca2012Loft38Portixol01}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
+                    <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
 <!--                    <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01} />-->
-                    <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01} />
-                    <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump07} />
+                    <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
+                    <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump07}>
+                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
+                    </CarouselImage>
                 </Carousel>
             </div>
         </Column>
@@ -208,6 +223,27 @@
         margin-left: 2rem;
         margin-right: 10rem;
         padding: 0.5rem;
+    }
+
+    .buy-nft {
+        position: absolute;
+        margin: 100px;
+        padding: 10px;
+        width: 100px;
+        transform: translateX(-50%);
+        background-color: #0070f3;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 2;
+
+    }
+    /** enable when going live with NFT*/
+    :global(.carousel-image:hover .buy-nft) {
+        opacity: 1;
     }
 </style>
 

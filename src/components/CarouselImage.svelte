@@ -2,8 +2,9 @@
     export let alt, src, css
 </script>
 
-<div class="color-container ">
+<div class="color-container carousel-image">
     <img alt={alt} src={src} style={css}/>
+    <slot class="buy-nft"/>
 </div>
 
 <style>
