@@ -72,7 +72,8 @@
     function doSwipe(e){
         direction = e.detail.direction;
         console.log("doSwipe direction",direction)
-        hideBackground()
+        showImage = !showImage
+        showImage?hideBackground():showBackground()
     }
 
     onMount(() => {
@@ -119,7 +120,7 @@
     </Row>
     <Row>
         <Column class="carousel">
-            <div id="carousel" class="visible" on:dblclick={showBackground}>
+            <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01}>
                         <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
