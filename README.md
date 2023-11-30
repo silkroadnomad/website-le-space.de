@@ -2,14 +2,14 @@
 
 # Roadmap
 - Modify & Enable booking calendar (coziCal)
-- Create NFT-Contract (ERC721) for le-space
-- Animate NFTs
+- Create NFT-Contract (ERC721) for le-space on Polygon testnet
+- Marketing concept
 - Add Terms & Conditions to Le Space UG
   - DAO and NFT concept
+- Animate NFTs
 - Mint NFTs
 - Enable "Buy on OpenSea Button"
 - Integrate Social Media (X, LinkedIn)
-- Marketing concept
 - Print T-Shirt
 
 ## Todos
