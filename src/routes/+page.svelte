@@ -100,7 +100,7 @@
         { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Health / Medical", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
         { image: KarakorumWorking01, year: "2011", headline: "@ company  ", location: "Islamic Republic of Pakistan", projects: '-', technologies: 'Cultural Competence'},
         { image: BitcoinCore01, year: "2011", headline: "Bitcoin Principles / Groovy & Grails", industry:"IT administration", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
-        { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", industry:"real estate", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
+        { image: CoworkingLeipzig01, year: "2009", headline: "Opening Le Space (beta) Coworking zu Leipzig", industry:"real estate", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Development", industry:"health / medical", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
     ];
 
@@ -166,7 +166,7 @@
                                   <img title={getIconDetails(icon.icon).name}
                                        src={`/simple-icons/${getIconDetails(icon.icon).name}.${getIconDetails(icon.icon).extension}`}
                                        style="margin: 0.3rem"
-                                       height="42" width="42" />
+                                       height="42"  />
                               </a>
                              {/if}
                          {/each}
