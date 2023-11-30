@@ -5,7 +5,7 @@
 - Create NFT-Contract (ERC721) for le-space
 - Animate NFTs
 - Add Terms & Conditions to Le Space UG
-  - 
+  - DAO and NFT concept
 - Mint NFTs
 - Enable "Buy on OpenSea Button"
 - Integrate Social Media (X, LinkedIn)

@@ -246,7 +246,7 @@
     }
     /** enable when going live with NFT*/
     :global(.carousel-image:hover .buy-nft) {
-        opacity: 1;
+        opacity: 0;
     }
 </style>
 
