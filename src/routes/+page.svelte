@@ -118,8 +118,8 @@
         { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", industry:"Pharmaceutical Industry",  location: "Vienna, Republic of Austria", projects: 'Svelte web app for a scientific research platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {icon:"svelte", url: "https://svelte.dev/"}, {icon:"cypress", url: "https://www.cypress.io/"}, {icon:"coffeescript", url: "https://coffeescript.org/"}, {icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
         { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Blockchain / Peer-To-Peer Development / IT / Media",  location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs", url: "https://ipfs.io/"}, {icon:"libp2p", url: "https://libp2p.io/"}, {icon:"react", url: "https://reactjs.org/"}, {icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"nginx", url: "https://docs.nginx.com/"}, {icon:"nodedotjs", url: "https://nodejs.org/en/"}, {icon:"metamask.png",url:"https://metamask.io"}, {icon:"docker", url: "https://www.docker.com/"}, {icon:"web3dotjs", url: "https://web3js.org/"}, {icon:"letsencrypt", url: "https://www.letsencrypt.org/"} , {icon:"openssl", url: "https://www.openssl.org/"}  ]},
         { image: CoworkingGoaSunsetMediation01 , year:"2013-2016", headline: "Remote.Yoga Startup / Akashionata", industry:"Health", location: "Agonda, Goa, Republic Indien", projects:"video & audio educational platform for yoga students and yoga teacher (mobile & web)", technologies: "MeteorJS, WebRTC, Apache-Cordoba, React-Native, Android, iOS", icons:[{icon:"webrtc", url: "https://webrtc.org/"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"meteor", url: "https://www.meteor.com/"},{icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"apachecordova", url: "https://cordova.apache.org/"},{icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Finance", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-        { image: BitcoinCore01, year: "2011", headline: "The Bitcoin Principles / Groovy & Grails Development", industry:"Crypto Currencies, Blockchain, IT administration", location: "Rishikesh, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
+        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Finance", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Android, iOS, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
+        { image: BitcoinCore01, year: "2011", headline: "The Bitcoin Principles / Groovy & Grails Development", industry:"Crypto Currencies, Blockchain, IT administration", location: "Rishikesh, Uttarakhand, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
         { image: KarakorumWorking01, year: "2011", headline: "Travelling The Silk Road", industry:"Sabbatical Industry",  location: "Islamic Republic of Pakistan", projects: 'Studies of world history, Gaining Cultural Competence', technologies: 'humility & openness' ,icons: [{ icon: "nusrat-fateh-ali-khan.jpg", url: "https://youtu.be/d7AqPH-LgmI"}]},
         { image: CoworkingLeipzig01, year: "2009", headline: "Launching Le Space (beta) Coworking zu Leipzig", industry:"office rental / marketing / networking / education", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Development", industry:"health / medical", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
@@ -130,8 +130,8 @@
         { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit-Entwicklung", industry:"Pharmaindustrie",  location: "Wien, Republik Österreich", projects: 'Svelte Web-App für eine wissenschaftliche Plattform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {icon:"svelte", url: "https://svelte.dev/"}, {icon:"cypress", url: "https://www.cypress.io/"}, {icon:"coffeescript", url: "https://coffeescript.org/"}, {icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
         { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Blockchain / Peer-To-Peer-Entwicklung / IT / Medien",  location: "Königreich Thailand, Malaysia, Demokratische Volksrepublik Laos", projects: 'Dezentraler Peer-to-Peer-Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs", url: "https://ipfs.io/"}, {icon:"libp2p", url: "https://libp2p.io/"}, {icon:"react", url: "https://reactjs.org/"}, {icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"nginx", url: "https://docs.nginx.com/"}, {icon:"nodedotjs", url: "https://nodejs.org/en/"}, {icon:"metamask.png",url:"https://metamask.io"}, {icon:"docker", url: "https://www.docker.com/"}, {icon:"web3dotjs", url: "https://web3js.org/"}, {icon:"letsencrypt", url: "https://www.letsencrypt.org/"} , {icon:"openssl", url: "https://www.openssl.org/"}  ]},
         { image: CoworkingGoaSunsetMediation01 , year:"2013-2016", headline: "Remote.Yoga Startup / Akashionata", industry:"Health", location: "Agonda, Goa, Republik Indien", projects:"Video/Audio Bildungsplatform für Yogalehrer und Yogaschüler (Mobile & Web)", technologies: "MeteorJS, WebRTC, Apache-Cordoba, React-Native, Android, iOS", icons:[{icon:"webrtc", url: "https://webrtc.org/"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"meteor", url: "https://www.meteor.com/"},{icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"apachecordova", url: "https://cordova.apache.org/"},{icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit-Entwicklung", industry:"Finanzindustrie / Fond management", location: "Palma de Mallorca, Spanien", projects:"Portierung einer Java Swing-Anwendung auf Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-        { image: BitcoinCore01, year: "2011", headline: "Die Bitcoin-Prinzipien / Groovy & Grails-Entwicklung", industry:"Kryptowährungen, Blockchain, IT-Verwaltung", location: "Rishikesh, Republik Indien", projects: 'Bitcoin-Evaluierung, Implementierung einer Tätigkeitsberichts-Web-Applikation für IT-Techniker', technologies: 'Die Bitcoin-Prinzipien, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
+        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit-Entwicklung", industry:"Finanzindustrie / Fond management", location: "Palma de Mallorca, Spanien", projects:"Portierung einer Java Swing-Anwendung auf Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Android, iOS, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
+        { image: BitcoinCore01, year: "2011", headline: "Die Bitcoin-Prinzipien / Groovy & Grails-Entwicklung", industry:"Kryptowährungen, Blockchain, IT-Verwaltung", location: "Rishikesh, Uttarakhand, Republik Indien", projects: 'Bitcoin-Evaluierung, Implementierung einer Tätigkeitsberichts-Web-Applikation für IT-Techniker', technologies: 'Die Bitcoin-Prinzipien, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
         { image: KarakorumWorking01, year: "2011", headline: "Reality-Check Seidenstraße", industry:"Sabbatical Industry",  location: "Islamische Republik Pakistan", projects: 'Studien zur Weltgeschichte, Interkulturelle Kompetenz erwerben', technologies: 'Bescheidenheit & Offenheit' ,icons: [{ icon: "nusrat-fateh-ali-khan.jpg", url: "https://youtu.be/d7AqPH-LgmI"}]},
         { image: CoworkingLeipzig01, year: "2009", headline: "Eröffnung Le Space (beta) Coworking zu Leipzig", industry:"Vermietung / Marketing / Netzwerk / Bildung", location: "Leipzig, Deutschland", projects: 'Gründung eines Coworking Space, Mitorganisation der Coworking Week Germany (2010), Teilnahme an der 1. Coworking Europe Conference in Brüssel (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Entwicklung", industry:"Gesundheit / Medizin", location: "München/Gefrees, Deutschland", projects: 'Jump CRM/ERP für Apotheken', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
@@ -143,16 +143,16 @@
      use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
     <img src={timeline[currentPage].image} />
 </div>
-<Grid class="grid">
+<Grid class="grid" fullWidth>
     <Row>
-        <Column>
+        <Column  sm={4}>
             <div on:dblclick={showBackground} role="button" tabindex="0">
                 <Hero headline={timeline[currentPage].headline}/>
             </div>
         </Column>
     </Row>
     <Row>
-        <Column class="carousel">
+        <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
                     <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01}>
@@ -187,18 +187,18 @@
         </Column>
     </Row>
     <Row>
-        <Column>
+        <Column sm={4} md={4} lg={8}>
             <div class="info-panel">
                 <table>
-                    <tr><td>{$_('page.info-panel.year')}</td><td>:{timeline[currentPage].year}</td></tr>
-                    <tr><td>{$_('page.info-panel.projects')}</td><td>:{timeline[currentPage].projects}</td></tr>
-                    <tr><td>{$_('page.info-panel.tech')}</td><td>:{timeline[currentPage].technologies}</td></tr>
-                    <tr><td>{$_('page.info-panel.industry')}</td><td>:{timeline[currentPage].industry}</td></tr>
-                    <tr><td>{$_('page.info-panel.location')}</td><td>:{timeline[currentPage].location}</td></tr>
+                    <tr><td>{$_('page.info-panel.year')}</td><td>:</td><td>{timeline[currentPage].year}</td></tr>
+                    <tr><td>{$_('page.info-panel.projects')}</td><td>:</td><td>{timeline[currentPage].projects}</td></tr>
+                    <tr><td>{$_('page.info-panel.tech')}</td><td>:</td><td>{timeline[currentPage].technologies}</td></tr>
+                    <tr><td>{$_('page.info-panel.industry')}</td><td>:</td><td>{timeline[currentPage].industry}</td></tr>
+                    <tr><td>{$_('page.info-panel.location')}</td><td>:</td><td>{timeline[currentPage].location}</td></tr>
                 </table>
             </div>
         </Column>
-        <Column>
+        <Column sm={4} md={4} lg={8}>
             <div class="icon-panel">
               {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
                       { #each timeline[currentPage].icons as icon }
@@ -248,18 +248,6 @@
     :global(.sc-carousel__content-container) {
         height: 30rem;
     }
-    /* Adjust styles for screens smaller than 600px */
-    @media (max-width: 600px) {
-        :global(.sc-carousel__content-container) {
-            height: 50vh;
-        }
-
-        :global(.sc-carousel__content-container img) {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-    }
     :global(.carusel) {
         margin-top: 2rem;
     }
@@ -273,15 +261,7 @@
         font-family: 'Courier New', monospace; /* Monospaced font for a classic look */
         width: 100%;
         align-content: center;
-        margin-left: 2rem;
-        margin-right: 10rem;
-        padding: 0.5rem;
-    }
-
-    .icon-panel {
-        margin-left: 2rem;
-        margin-right: 10rem;
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .buy-nft {
@@ -303,6 +283,22 @@
     /** enable when going live with NFT*/
     :global(.carousel-image:hover .buy-nft) {
         opacity: 0;
+    }
+    /* Adjust styles for screens smaller than 600px */
+    @media (max-width: 600px) {
+        :global(.sc-carousel__content-container) {
+            height: 50vh;
+        }
+
+        :global(.sc-carousel__content-container img) {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .info-panel {
+            margin-right: 2rem; /* Adjust as needed */
+        }
     }
 </style>
 
