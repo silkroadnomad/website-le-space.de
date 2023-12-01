@@ -198,6 +198,7 @@
         margin-top: 2rem;
     }
     .info-panel {
+        margin-top: 1rem;
         background-color: black;
         color: #0F0; /* Bright green color */
         text-shadow: 0 0 10px #0F0; /* Green glow effect */
@@ -205,6 +206,11 @@
         width: 100%;
         align-content: center;
         padding: 1rem;
+    }
+
+    .icon-panel {
+        margin-top: 1rem;
+        background-color: white;
     }
 
     .buy-nft {
