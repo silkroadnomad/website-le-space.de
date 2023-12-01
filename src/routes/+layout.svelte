@@ -3,6 +3,9 @@
     import {PUBLIC_WEB_URL} from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
     import { Dropdown } from "carbon-components-svelte";
+    import { De,Gb } from 'svelte-flag-icons';
+    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
+    import {timeline_en, timeline_de} from "../timelines.js"
     import {
         Theme, Header,
         HeaderNav,
@@ -13,14 +16,18 @@
         SideNavMenu,
         SideNavMenuItem, HeaderUtilities, HeaderGlobalAction,
     } from "carbon-components-svelte";
-    import { De,Gb } from 'svelte-flag-icons';
-    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
     import '$lib/i18n' //locales
     import "carbon-components-svelte/css/all.css";
     import '@beyonk/gdpr-cookie-consent-banner/banner.css' // optional, you can also define your own styles
-
-    const title = "Le Space - Local First Software In Global Working & Living Environments"
-    const description = "General IT- and Technology Consulting, Virtual Coworking, Peer Programming Sessions, Remote Work Consulting, Coworking Consulting"
+    let title = '';
+    $:$locale==='de'?title = timeline_de[0].headline:title = timeline_en[0].headline;
+    let description = "";
+    timeline_de.forEach(item => {
+        description += item.headline + " ";
+    });
+    timeline_en.forEach(item => {
+        description += item.headline + " ";
+    });
     const url = "https://le-space.de"
     const image = PUBLIC_WEB_URL+"/le-space-ug.png"
     const favicon = "./favicon.ico"
@@ -68,7 +75,7 @@
         persistentHamburgerMenu={true}
         bind:isSideNavOpen
         company="Le Space"
-        platformName="IT-Consulting"
+        platformName={title}
         href="/">
 
     <HeaderNav>
@@ -100,25 +107,9 @@
         <SideNavItems>
             <SideNavLink href={"/"+$locale+"/gdpr"} text={$_('page.home.data_protection')} />
             <SideNavLink href={"/"+$locale+"/imprint"} text={$_('page.home.imprint')} />
-    <!--        <SideNavLink text="Link 3" />
-            <SideNavMenu text="Menu">
-                <SideNavMenuItem href="/" text="Link 1" />
-                <SideNavMenuItem href="/" text="Link 2" />
-                <SideNavMenuItem href="/" text="Link 3" />
-            </SideNavMenu> _-->
         </SideNavItems>
     </SideNav>
 <slot></slot>
-<!--    <Dropdown-->
-<!--            class="flags"-->
-
-<!--            bind:selectedId={$locale}-->
-<!--            on:select={({ detail }) => {-->
-<!--                        $locale=detail.selectedItem.id-->
-<!--                    }}-->
-<!--            items={[{ id: "de", text: "DE" },{ id: "en", text: "EN" }]}-->
-<!--            let:item>{#if item.id==="de"}<De />{/if}{#if item.id==="en"}<Gb />{/if}-->
-<!--    </Dropdown>-->
 {/if}
 <style>
     .flags {
