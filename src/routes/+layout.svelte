@@ -38,7 +38,9 @@
         await waitLocale()
     }
     const initAnalytics = () => { }
+    let theme = "g80";
 </script>
+
 <svelte:head>
     <title>{title}</title>
     <link rel="icon" type="image/svg" href={favicon} />
@@ -60,6 +62,7 @@
     {/if}
 
 </svelte:head>
+
 <GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies...  " on:analytics={initAnalytics} />
 <Header
         persistentHamburgerMenu={true}
@@ -72,21 +75,12 @@
     </HeaderNav>
     <HeaderUtilities>
         <div class="flags">
-            <De style="margin-right: 10px" on:click={()=>{
-                $locale="de"
-                console.log("$locale",$locale)
-            }}/><Gb style="margin-right: 10px"  on:click={()=>{
-
-                $locale="gb"
-                      console.log("$locale",$locale)
-            }}/>
+            <De style="margin-right: 10px" on:click={()=>$locale="de"}/>
+            <Gb style="margin-right: 10px"  on:click={()=>$locale="gb"}/>
         </div>
-        <HeaderGlobalAction aria-label="language" >
-  
-        </HeaderGlobalAction>
-
         <HeaderGlobalAction aria-label="dark-mode">
         <Theme
+                bind:theme
                 render="toggle"
                 toggle={{
                             themes: ["g10", "g80"],
