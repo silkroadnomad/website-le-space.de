@@ -24,19 +24,27 @@
     let carousel
     let showImage = true
 
+    function goRight() {
+        if (currentPage < timeline.length - 1) {
+            currentPage++;
+            carousel.goTo(currentPage);
+        }
+    }
+
+    function goLeft() {
+        if (currentPage > 0) {
+            currentPage--;
+            carousel.goTo(currentPage);
+        }
+    }
+
     function handleKeydown(event) {
         switch (event.key) {
             case 'ArrowRight':
-                if (currentPage < timeline.length - 1) {
-                    currentPage++;
-                    carousel.goTo(currentPage);
-                }
+                goRight();
                 break;
             case 'ArrowLeft':
-                if (currentPage > 0) {
-                    currentPage--;
-                    carousel.goTo(currentPage);
-                }
+                goLeft();
                 break;
             case 'Escape':
                 hideBackground();
@@ -71,9 +79,17 @@
     let direction;
     function doSwipe(e){
         direction = e.detail.direction;
-        console.log("doSwipe direction",direction)
-        showImage = !showImage
-        showImage?hideBackground():showBackground()
+        switch (direction) {
+            case 'right':
+                goRight();
+                break;
+            case 'left':
+                goLeft();
+                break;
+            default:
+                showImage = !showImage
+                    showImage?hideBackground():showBackground()
+        }
     }
 
     onMount(() => {
