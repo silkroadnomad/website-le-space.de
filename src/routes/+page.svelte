@@ -136,10 +136,8 @@
         { image: CoworkingLeipzig01, year: "2009", headline: "Eröffnung Le Space (beta) Coworking zu Leipzig", industry:"Vermietung / Marketing / Netzwerk / Bildung", location: "Leipzig, Deutschland", projects: 'Gründung eines Coworking Space, Mitorganisation der Coworking Week Germany (2010), Teilnahme an der 1. Coworking Europe Conference in Brüssel (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
         { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Entwicklung", industry:"Gesundheit / Medizin", location: "München/Gefrees, Deutschland", projects: 'Jump CRM/ERP für Apotheken', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
     ];
-    $:console.log("changing locale",$locale)
+
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
-
-
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
      use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
@@ -198,11 +196,6 @@
                     <tr><td>{$_('page.info-panel.industry')}</td><td>:{timeline[currentPage].industry}</td></tr>
                     <tr><td>{$_('page.info-panel.location')}</td><td>:{timeline[currentPage].location}</td></tr>
                 </table>
-<!--                <p>{timeline[currentPage].year}</p>-->
-<!--                <p>{$_('page.info-panel.projects')}: {timeline[currentPage].projects}</p>-->
-<!--                <p>{$_('page.info-panel.tech')}: {timeline[currentPage].technologies}</p>-->
-<!--                <p>{$_('page.info-panel.industry')}: {timeline[currentPage].industry}</p>-->
-<!--                <p>{$_('page.info-panel.location')}: {timeline[currentPage].location}</p>-->
             </div>
         </Column>
         <Column>
@@ -254,6 +247,18 @@
     }
     :global(.sc-carousel__content-container) {
         height: 30rem;
+    }
+    /* Adjust styles for screens smaller than 600px */
+    @media (max-width: 600px) {
+        :global(.sc-carousel__content-container) {
+            height: 50vh;
+        }
+
+        :global(.sc-carousel__content-container img) {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
     :global(.carusel) {
         margin-top: 2rem;
