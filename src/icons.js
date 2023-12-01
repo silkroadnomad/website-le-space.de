@@ -36,4 +36,5 @@ export const icons = {
     kreuzer: {icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},
     lvz: {icon:"lvz.jpg",url:"https://www.lvz.de"},
     dnn: {icon:"dnn.jpg",url:"https://www.dnn.de/"},
+    mysql: {icon:"mysql", url:"https://www.mysql.com/"}
 };
