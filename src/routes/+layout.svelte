@@ -39,7 +39,7 @@
         }
         await waitLocale()
     }
-    const initAnalytics = () => {console.log("initAnalytics")}
+    const initAnalytics = () => { }
 </script>
 <svelte:head>
     <title>{title}</title>
