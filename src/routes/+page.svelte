@@ -81,10 +81,10 @@
         direction = e.detail.direction;
         switch (direction) {
             case 'right':
-                goRight();
+                goLeft();
                 break;
             case 'left':
-                goLeft();
+                goRight();
                 break;
             default:
                 showImage = !showImage
