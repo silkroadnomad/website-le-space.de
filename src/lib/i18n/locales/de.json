@@ -3,6 +3,13 @@
     "home": {
       "data_protection": "Datenschutz",
       "imprint": "Impressum"
+    },
+    "info-panel": {
+      "year": "Jahr",
+      "projects": "Projekt(e)",
+      "tech": "Tech",
+      "industry": "Branche",
+      "location": "Location"
     }
   }
 }

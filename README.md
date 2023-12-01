@@ -1,9 +1,6 @@
 # Website www.le-space.de
 
-
 # Roadmap
-- German
-- Auto Dark Mode
 - Modify & Enable booking calendar (coziCal)
 - Create NFT-Contract (ERC721) for le-space on Polygon testnet
 - Marketing concept
