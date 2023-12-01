@@ -1,7 +1,7 @@
 # Website www.le-space.de
 
 # Roadmap
-- Responsive for mobile
+- Public GitHub Repo if possible (e.g. OrbitDB-Blog)
 - Modify & Enable booking calendar (coziCal)
 - Create NFT-Contract (ERC721) for le-space on Polygon testnet
 - Marketing concept

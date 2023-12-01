@@ -6,19 +6,8 @@
     import {_, isLoading, locale} from "svelte-i18n";
     import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
-
+    import {timeline_en, timeline_de} from "../timelines.js"
     import CarouselImage from "../components/CarouselImage.svelte";
-
-    import LabWeek2023LibP2P01 from "$lib/assets/2023-labweek-libp2p-01.png"
-    import Vienna2023Svelte from "$lib/assets/2023-vienna-svelte-02.png"
-    import Thailand2022OrbitDB from "$lib/assets/2022-thailand-orbitdb-04.png"
-
-    import BitcoinCore01 from "$lib/assets/bitcoin-core-01.png"
-    import CoworkingLeipzig01 from "$lib/assets/coworking-leipzig-01.png";
-    import CoworkingGoaSunsetMediation01 from "$lib/assets/coworking-goa-sunset-mediation-01.png"
-    import KarakorumWorking01 from "$lib/assets/karakorum-working-01.png";
-    import Mallorca2012Loft38Portixol01 from "$lib/assets/2012-LOFT38-01.png"
-    import VsaJump07 from "$lib/assets/vsa-jump-07.png";
 
     let currentPage = 0
     let carousel
@@ -113,30 +102,6 @@
      * Icons from: https://simpleicons.org/?q=ipfs
      */
     let timeline = [];
-    let timeline_en = [
-        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer Development", industry:"Blockchain / Peer-To-Peer", location: "Istanbul, Republic of Türkiye", projects: 'Attending Labweek23 Conference, LibP2P day, IPFSConnect', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:"libp2p", url: "https://libp2p.io/"}, {icon:"helia.png", url: "https://helia.io/"}, {icon:"ipfs", url: "https://ipfs.io/"}, {icon:"svelte", url: "https://svelte.dev/"},{icon:"typescript", url: "https://www.typescriptlang.org/"}]},
-        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit Development", industry:"Pharmaceutical Industry",  location: "Vienna, Republic of Austria", projects: 'Svelte web app for a scientific research platform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {icon:"svelte", url: "https://svelte.dev/"}, {icon:"cypress", url: "https://www.cypress.io/"}, {icon:"coffeescript", url: "https://coffeescript.org/"}, {icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Blockchain / Peer-To-Peer Development / IT / Media",  location: "Kingdom of Thailand, Malaysia, Lao People's Democratic Republic", projects: 'Decentralized Peer-to-Peer Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs", url: "https://ipfs.io/"}, {icon:"libp2p", url: "https://libp2p.io/"}, {icon:"react", url: "https://reactjs.org/"}, {icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"nginx", url: "https://docs.nginx.com/"}, {icon:"nodedotjs", url: "https://nodejs.org/en/"}, {icon:"metamask.png",url:"https://metamask.io"}, {icon:"docker", url: "https://www.docker.com/"}, {icon:"web3dotjs", url: "https://web3js.org/"}, {icon:"letsencrypt", url: "https://www.letsencrypt.org/"} , {icon:"openssl", url: "https://www.openssl.org/"}  ]},
-        { image: CoworkingGoaSunsetMediation01 , year:"2013-2016", headline: "Remote.Yoga Startup / Akashionata", industry:"Health", location: "Agonda, Goa, Republic Indien", projects:"video & audio educational platform for yoga students and yoga teacher (mobile & web)", technologies: "MeteorJS, WebRTC, Apache-Cordoba, React-Native, Android, iOS", icons:[{icon:"webrtc", url: "https://webrtc.org/"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"meteor", url: "https://www.meteor.com/"},{icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"apachecordova", url: "https://cordova.apache.org/"},{icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit Development", industry:"Finance", location: "Palma de Mallorca, Spain", projects:"Porting a Java Swing Application to Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Android, iOS, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-        { image: BitcoinCore01, year: "2011", headline: "The Bitcoin Principles / Groovy & Grails Development", industry:"Crypto Currencies, Blockchain, IT administration", location: "Rishikesh, Uttarakhand, Republic of India", projects: 'Bitcoin evaluation, Implementing a activity report web app', technologies: 'The Bitcoin Principles, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
-        { image: KarakorumWorking01, year: "2011", headline: "Travelling The Silk Road", industry:"Sabbatical Industry",  location: "Islamic Republic of Pakistan", projects: 'Studies of world history, Gaining Cultural Competence', technologies: 'humility & openness' ,icons: [{ icon: "nusrat-fateh-ali-khan.jpg", url: "https://youtu.be/d7AqPH-LgmI"}]},
-        { image: CoworkingLeipzig01, year: "2009", headline: "Launching Le Space (beta) Coworking zu Leipzig", industry:"office rental / marketing / networking / education", location: "Leipzig, Germany", projects: 'Launching a Coworking Space, Co-Organizing Coworking Week Germany (2010), Joining 1st Coworking Europe Conference (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
-        { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Development", industry:"health / medical", location: "Munich/Gefrees, Germany", projects: 'Jump CRM/ERP for Pharmacies', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-    ];
-
-    const timeline_de = [
-        { image: LabWeek2023LibP2P01, year: "2023", headline: "Local First Software & Peer-To-Peer-Entwicklung", industry:"Blockchain / Peer-To-Peer", location: "Istanbul, Republik Türkei", projects: 'Teilnahme an der Labweek23-Konferenz, LibP2P-Tag, IPFSConnect', technologies: 'P2PLib, IPFS, Helia', icons:[{icon:"libp2p", url: "https://libp2p.io/"}, {icon:"helia.png", url: "https://helia.io/"}, {icon:"ipfs", url: "https://ipfs.io/"}, {icon:"svelte", url: "https://svelte.dev/"},{icon:"typescript", url: "https://www.typescriptlang.org/"}]},
-        { image: Vienna2023Svelte, year: "2023", headline: "Svelte/SvelteKit-Entwicklung", industry:"Pharmaindustrie",  location: "Wien, Republik Österreich", projects: 'Svelte Web-App für eine wissenschaftliche Plattform', technologies: 'Svelte/SvelteKit 4.0, JavaScript, Cypress, Playwright, JSDoc',  icons:[{icon: "javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"}, {icon:"svelte", url: "https://svelte.dev/"}, {icon:"cypress", url: "https://www.cypress.io/"}, {icon:"coffeescript", url: "https://coffeescript.org/"}, {icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Thailand2022OrbitDB, year: "2022", headline: "OrbitDB, LibP2P, JS-IPFS / Helia",  industry:"Blockchain / Peer-To-Peer-Entwicklung / IT / Medien",  location: "Königreich Thailand, Malaysia, Demokratische Volksrepublik Laos", projects: 'Dezentraler Peer-to-Peer-Blog', technologies: 'ReactJS, JavaScript, Cypress, OrbitDB, libp2p, js-ipfs, NodeJS,',  icons:[{icon:"ipfs", url: "https://ipfs.io/"}, {icon:"libp2p", url: "https://libp2p.io/"}, {icon:"react", url: "https://reactjs.org/"}, {icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"nginx", url: "https://docs.nginx.com/"}, {icon:"nodedotjs", url: "https://nodejs.org/en/"}, {icon:"metamask.png",url:"https://metamask.io"}, {icon:"docker", url: "https://www.docker.com/"}, {icon:"web3dotjs", url: "https://web3js.org/"}, {icon:"letsencrypt", url: "https://www.letsencrypt.org/"} , {icon:"openssl", url: "https://www.openssl.org/"}  ]},
-        { image: CoworkingGoaSunsetMediation01 , year:"2013-2016", headline: "Remote.Yoga Startup / Akashionata", industry:"Health", location: "Agonda, Goa, Republik Indien", projects:"Video/Audio Bildungsplatform für Yogalehrer und Yogaschüler (Mobile & Web)", technologies: "MeteorJS, WebRTC, Apache-Cordoba, React-Native, Android, iOS", icons:[{icon:"webrtc", url: "https://webrtc.org/"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"meteor", url: "https://www.meteor.com/"},{icon:"javascript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"},{icon:"apachecordova", url: "https://cordova.apache.org/"},{icon:"intellijidea", url: "https://www.jetbrains.com/idea/"}]},
-        { image: Mallorca2012Loft38Portixol01 , year:"2012", headline: "Java Swing & Google WebToolkit-Entwicklung", industry:"Finanzindustrie / Fond management", location: "Palma de Mallorca, Spanien", projects:"Portierung einer Java Swing-Anwendung auf Google WebToolkit", technologies: "Google Web Toolkit, Java Swing, Android, iOS, Eclipse", icons:[{icon:"gwt.png", url: "https://www.gwtproject.org/"},{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"android.png", url:"https://www.android.com/"},{icon:"ios.png", url:"https://www.apple.com/ios"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-        { image: BitcoinCore01, year: "2011", headline: "Die Bitcoin-Prinzipien / Groovy & Grails-Entwicklung", industry:"Kryptowährungen, Blockchain, IT-Verwaltung", location: "Rishikesh, Uttarakhand, Republik Indien", projects: 'Bitcoin-Evaluierung, Implementierung einer Tätigkeitsberichts-Web-Applikation für IT-Techniker', technologies: 'Die Bitcoin-Prinzipien, Bitcoin Core, Groovy & Grails, SQL, MongoDB',icons:[{icon:"bitcoin", url: "https://bitcoin.org/"}, {icon:"grails", url: "https://grails.org/"}, {icon:"apachegroovy", url: "https://groovy-lang.org/"},{icon:"mongodb", url: "https://www.mongodb.com/"},{icon:"selenium", url:"https://www.selenium.dev/"} ]},
-        { image: KarakorumWorking01, year: "2011", headline: "Reality-Check Seidenstraße", industry:"Sabbatical Industry",  location: "Islamische Republik Pakistan", projects: 'Studien zur Weltgeschichte, Interkulturelle Kompetenz erwerben', technologies: 'Bescheidenheit & Offenheit' ,icons: [{ icon: "nusrat-fateh-ali-khan.jpg", url: "https://youtu.be/d7AqPH-LgmI"}]},
-        { image: CoworkingLeipzig01, year: "2009", headline: "Eröffnung Le Space (beta) Coworking zu Leipzig", industry:"Vermietung / Marketing / Netzwerk / Bildung", location: "Leipzig, Deutschland", projects: 'Gründung eines Coworking Space, Mitorganisation der Coworking Week Germany (2010), Teilnahme an der 1. Coworking Europe Conference in Brüssel (2010)', technologies: 'Coworking, Bar Camps, Events', icons:[{icon:"mdr.png",url:"https://www.mdr.de/tv/"},{icon:"mdr-info",url:"https://www.mdr.de/mdr-aktuell-nachrichtenradio"},{icon:"kreuzer-leipzig.jpg",url:"https://kreuzer-leipzig.de/"},{icon:"lvz.jpg",url:"https://www.lvz.de"},{icon:"dnn.jpg",url:"https://www.dnn.de/"}]},
-        { image: VsaJump07, year: "2006", headline: "Java/J2EE & Java Swing Entwicklung", industry:"Gesundheit / Medizin", location: "München/Gefrees, Deutschland", projects: 'Jump CRM/ERP für Apotheken', technologies: 'Java/J2EE, Java Swing, SQL, Oracle DB',  icons:[{icon:"java", url: "https://www.java.com/"},{icon:"oracle", url: "https://www.oracle.com/index.html"},{icon:"eclipseide", url: "https://www.eclipse.org/ide/"}]},
-    ];
-
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
@@ -155,33 +120,11 @@
         <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
-                    <CarouselImage css="object-position: 50% 70px" alt="LabWeek2023LibP2P01" src={LabWeek2023LibP2P01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 70px" alt="Vienna2023Svelte" src={Vienna2023Svelte}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 70px" alt="Thailand2022OrbitDB" src={Thailand2022OrbitDB}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 30px;" alt="CoworkingGoaSunsetMediation01" src={CoworkingGoaSunsetMediation01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 30px;" alt="Mallorca2012Loft38Portixol01" src={Mallorca2012Loft38Portixol01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 30px;" alt="BitcoinCore01" src={BitcoinCore01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 30px; " alt="KarakorumWorking01" src={KarakorumWorking01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 30px" alt="CoworkingLeipzig01" src={CoworkingLeipzig01}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
-                    <CarouselImage css="object-position: 50% 150px" alt="VsaJump02" src={VsaJump07}>
-                        <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 200, duration: 500 }}>Buy as NFT</button>
-                    </CarouselImage>
+                    {#each timeline as item, index}
+                        <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
+                            <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
+                        </CarouselImage>
+                    {/each}
                 </Carousel>
             </div>
         </Column>
@@ -201,7 +144,7 @@
         <Column sm={4} md={4} lg={8}>
             <div class="icon-panel">
               {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
-                      { #each timeline[currentPage].icons as icon }
+                    { #each timeline[currentPage].icons as icon }
                              {#if icon}
                               <a href={icon.url} target="_blank">
                                   <img title={getIconDetails(icon.icon).name}
@@ -210,7 +153,7 @@
                                        height="42"  />
                               </a>
                              {/if}
-                         {/each}
+                     {/each}
                 {/if}
             </div>
         </Column>
