@@ -1,13 +1,8 @@
 <script>
     import { browser } from '$app/environment'
-    import { locale, isLoading, waitLocale } from 'svelte-i18n'
-    import '$lib/i18n' //locales
-    import { Dropdown } from "carbon-components-svelte";
-    import { De,Gb } from 'svelte-flag-icons';
     import {PUBLIC_WEB_URL} from "$env/static/public";
-    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
-    import '@beyonk/gdpr-cookie-consent-banner/banner.css' // optional, you can also define your own styles
-    import "carbon-components-svelte/css/all.css";
+    import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
+    import { Dropdown } from "carbon-components-svelte";
     import {
         Theme, Header,
         HeaderNav,
@@ -18,7 +13,11 @@
         SideNavMenu,
         SideNavMenuItem, HeaderUtilities, HeaderGlobalAction,
     } from "carbon-components-svelte";
-    import { _ } from 'svelte-i18n'
+    import { De,Gb } from 'svelte-flag-icons';
+    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
+    import '$lib/i18n' //locales
+    import "carbon-components-svelte/css/all.css";
+    import '@beyonk/gdpr-cookie-consent-banner/banner.css' // optional, you can also define your own styles
 
     const title = "Le Space - Local First Software In Global Working & Living Environments"
     const description = "General IT- and Technology Consulting, Virtual Coworking, Peer Programming Sessions, Remote Work Consulting, Coworking Consulting"
