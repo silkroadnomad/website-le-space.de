@@ -34,7 +34,6 @@
 
     export const load = async () => {
         if (browser) {
-            console.log("setting lang:",window.navigator.language)
             locale.set(window.navigator.language.substring(0,2))
         }
         await waitLocale()
@@ -58,7 +57,6 @@
     {#if browser}
         <script src="https://cozycal.com/embed/iframe/9375.js"></script>
         <script src="https://cozycal.com/embed/iframe/9380.js"></script>
-
 <!--        <script async src="https://cozycal.com/embed/v1/9375.js"></scrip>-->
     {/if}
 
@@ -74,6 +72,19 @@
     <HeaderNav>
     </HeaderNav>
     <HeaderUtilities>
+        <div class="flags">
+            <De style="margin-right: 10px" on:click={()=>{
+                $locale="de"
+                console.log("$locale",$locale)
+            }}/><Gb style="margin-right: 10px"  on:click={()=>{
+
+                $locale="gb"
+                      console.log("$locale",$locale)
+            }}/>
+        </div>
+        <HeaderGlobalAction aria-label="language" >
+  
+        </HeaderGlobalAction>
 
         <HeaderGlobalAction aria-label="dark-mode">
         <Theme
@@ -86,22 +97,6 @@
                             size: "sm",
               }}/>
         </HeaderGlobalAction>
-
-<!--        <HeaderGlobalAction aria-label="language" >
-                <Dropdown
-                    class="flags"
-                    size="sm"
-                    bind:selectedId={$locale}
-                    items={[
-                        { id: "de", text: "DE" },
-                        { id: "en", text: "EN" }
-                      ]}
-                    let:item
-                    >
-                        {#if item.id==="de"}<De />{/if}
-                        {#if item.id==="en"}<Gb />{/if}
-                </Dropdown>
-        </HeaderGlobalAction>-->
 
     </HeaderUtilities>
 </Header>
@@ -121,16 +116,25 @@
         </SideNavItems>
     </SideNav>
 <slot></slot>
+<!--    <Dropdown-->
+<!--            class="flags"-->
+
+<!--            bind:selectedId={$locale}-->
+<!--            on:select={({ detail }) => {-->
+<!--                        $locale=detail.selectedItem.id-->
+<!--                    }}-->
+<!--            items={[{ id: "de", text: "DE" },{ id: "en", text: "EN" }]}-->
+<!--            let:item>{#if item.id==="de"}<De />{/if}{#if item.id==="en"}<Gb />{/if}-->
+<!--    </Dropdown>-->
 {/if}
 <style>
-    :global(.flags) {
-       background: black !important; /*padding: 15px;*/
-        /*margin-top: 15px;*/
-
+    .flags {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
     }
     :global(.bx--list-box__menu-item, .bx--list-box__menu-item__option) {
         height: auto;
         background: black;
-        /*padding:10px*/
     }
 </style>
