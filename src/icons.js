@@ -1,4 +1,5 @@
 export const icons = {
+    storybook: {icon:"storybook", url:"https://storybook.js.org"},
     libp2p: {icon:"libp2p", url: "https://libp2p.io/"},
     helia: {icon:"helia.png", url: "https://helia.io/"},
     ipfs: {icon:"ipfs", url: "https://ipfs.io/"},
