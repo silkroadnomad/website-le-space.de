@@ -119,7 +119,7 @@
     <Row>
         <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-                <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} >
+                <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} autoplay={true} interval={5000}>
                     {#each timeline as item, index}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
