@@ -1,8 +1,6 @@
 # Website www.le-space.de
 
 # Roadmap
-- deploy to ipfs
-- move smart contracts stuff into new directory
 - use svelte tiles (cards) instead of carousel
 - Add a road map 
 - Add contact
