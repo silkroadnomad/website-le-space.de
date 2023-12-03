@@ -1,8 +1,11 @@
 # Website www.le-space.de
 
 # Roadmap
-- deploy to ipfs 
+- deploy to ipfs
+- move smart contracts stuff into new directory
+- use svelte tiles (cards) instead of carousel
 - Add a road map 
+- Add contact
 - Public GitHub Repo where possible 
   - e.g. OrbitDB-Blog (fly in Github Icon)
   - Webanizer TB? 
