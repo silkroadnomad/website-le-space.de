@@ -218,7 +218,7 @@
 
     .icon-panel {
         height: 100%;
-        margin-right: 85px;
+        margin-right: 1.5rem;
         margin-top: 1rem;
         background-color: lightgray;
     }
