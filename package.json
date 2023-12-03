@@ -12,13 +12,14 @@
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"test:integration": "playwright smartcontracts/test",
+		"test:integration": "playwright test",
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
 		"@beyonk/gdpr-cookie-consent-banner": "^12.1.0",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-static": "^2.0.3",
+		"@sveltejs/adapter-vercel": "^3.1.0",
 		"@sveltejs/kit": "^1.27.6",
 		"carbon-components-svelte": "^0.81.0",
 		"carbon-icons-svelte": "^12.3.0",
@@ -26,8 +27,6 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
-		"@sveltejs/adapter-vercel": "^3.1.0",
-		"vite": "^4.5.0",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.2.7",
@@ -38,9 +37,8 @@
 		"svelte-i18n": "^4.0.0",
 		"sveltejs-adapter-ipfs": "^0.4.12",
 		"typescript": "^5.0.0",
+		"vite": "^4.5.0",
 		"vitest": "^0.32.2"
 	},
-	"type": "module",
-	"dependencies": {
-	}
+	"type": "module"
 }
