@@ -23,6 +23,16 @@ or traditionally on https://le-space.de
 - Integrate Social Media (X, LinkedIn)
 - Print T-Shirt
 
+# IPFS
+- run ```npm run build-ipfs``` to create a new ipfs fixed build
+- open the current folder e.g. ```open .```
+- rename the build folder to ```dist-le-space.de-0.0.x```
+- drag & drop this folder into ipfs desktop (or ipfs add)
+- pin the cid 
+- update dns with new cid
+- check any ipfs gateway e.g. https://ipfs.le-space.de/ipfs/QmaJNpWUqqFiP8yQzKwkvkmKPri4UXKiKa3HcejcDFebZA
+- and the ipns name e.g. https://ipfs.le-space.de/ipns/le-space.de
+
 # NFT
 ## folders & files
 contracts
