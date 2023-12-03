@@ -5,7 +5,8 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
-- use svelte tiles (cards) instead of carousel
+- Fix English GDPR menue and automatic language switch  
+- Use Svelte tiles (cards) instead of carousel
 - Add a road map 
 - Add contact
 - Public GitHub Repo where possible 

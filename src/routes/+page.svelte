@@ -212,11 +212,15 @@
         width: 100%;
         align-content: center;
         padding: 1rem;
+        margin-left: 25px;
+        height: 100%;
     }
 
     .icon-panel {
+        height: 100%;
+        margin-right: 85px;
         margin-top: 1rem;
-        background-color: white;
+        background-color: lightgray;
     }
 
     .buy-nft {
@@ -242,7 +246,7 @@
     /* Adjust styles for screens smaller than 600px */
     @media (max-width: 600px) {
         :global(.sc-carousel__content-container) {
-            height: 50vh;
+            height: 60vh;
         }
 
         :global(.sc-carousel__content-container img) {
@@ -250,9 +254,15 @@
             height: 100%;
             object-fit: contain;
         }
+        .icon-panel {
+            width: 100%;
+            margin-top: 0rem;
+        }
+        .info-panel  {
 
-        .info-panel {
-            margin-right: 2rem; /* Adjust as needed */
+            margin: 0.1rem; /* Adjust as needed */
+            margin-bottom: 0rem;
+            padding: 1rem; /* Adjust as needed */
         }
     }
 </style>
