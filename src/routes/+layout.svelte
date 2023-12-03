@@ -83,7 +83,7 @@
     <HeaderUtilities>
         <div class="flags">
             <De style="margin-right: 10px" on:click={()=>$locale="de"}/>
-            <Gb style="margin-right: 10px"  on:click={()=>$locale="gb"}/>
+            <Gb style="margin-right: 10px"  on:click={()=>$locale="en"}/>
         </div>
         <HeaderGlobalAction aria-label="dark-mode">
         <Theme

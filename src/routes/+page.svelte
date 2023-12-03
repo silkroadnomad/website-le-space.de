@@ -125,7 +125,7 @@
     <Row>
         <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-                <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} autoplay={true} interval={5000}>
+                <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
                     {#each timeline as item, index}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
@@ -167,7 +167,7 @@
 </Grid>
 <style>
     td {
-        padding: 0 10px; /* Adjust as needed */
+        padding: 0 10px;
     }
     #fullscreen-bg img {
         width: 100%;
@@ -181,7 +181,7 @@
         width: 100vw;
         height: 100vh;
         background-size: cover;
-        transition: opacity 0.5s; /* Adjust as needed */
+        transition: opacity 0.5s;
         z-index: 100;
     }
     .hidden {
@@ -206,9 +206,9 @@
     .info-panel {
         margin-top: 1rem;
         background-color: black;
-        color: #0F0; /* Bright green color */
-        text-shadow: 0 0 10px #0F0; /* Green glow effect */
-        font-family: 'Courier New', monospace; /* Monospaced font for a classic look */
+        color: #0F0;
+        text-shadow: 0 0 10px #0F0;
+        font-family: 'Courier New', monospace;
         width: 100%;
         align-content: center;
         padding: 1rem;
@@ -248,7 +248,6 @@
         :global(.sc-carousel__content-container) {
             height: 60vh;
         }
-
         :global(.sc-carousel__content-container img) {
             width: 100%;
             height: 100%;
