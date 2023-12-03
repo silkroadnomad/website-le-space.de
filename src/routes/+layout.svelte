@@ -70,7 +70,7 @@
 
 </svelte:head>
 
-<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies...  " on:analytics={initAnalytics} />
+<!--<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies...  " on:analytics={initAnalytics} />-->
 <Header
         persistentHamburgerMenu={true}
         bind:isSideNavOpen

@@ -1,17 +1,16 @@
-import { ethers, upgrades } from "hardhat";
+import hre from "hardhat";
 
 async function main() {
   {
 
-    let provider = ethers.getDefaultProvider();
-    let wallet = ethers.Wallet.createRandom();
+    let provider = hre.ethers.getDefaultProvider();
+    let wallet = hre.ethers.Wallet.createRandom();
     let signer = wallet.connect(provider);
-    let address = signer.getAddress()
-    const ContractFactory = await ethers.getContractFactory("LeSpace");
-    const instance = await upgrades.deployProxy(ContractFactory,[address,address,address,address]);
-    await instance.deployed();
+    let address = await signer.getAddress()
 
-    console.log(`ERC721 Proxy deployed to ${instance.address}`);
+    const ContractFactory = await hre.ethers.getContractFactory("LeSpace");
+    const instance = await hre.upgrades.deployProxy(ContractFactory,[address,address,address,address],{kind:'uups'});
+    console.log(`ERgit C721 Proxy deployed to ${instance.target}`);
   }
   // {
   //   const ContractFactory = await ethers.getContractFactory("LeSpace");

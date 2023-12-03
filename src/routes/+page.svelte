@@ -82,6 +82,12 @@
     }
 
     onMount(() => {
+
+        if (window.ipfs || window.IpfsHttpClient) {
+            window.location.href = 'ipfs://QmPvCU4WtrnxdPTPwYWTVEQ4g8msK1f1HASwGekSyQFEgY';
+        } else {
+            console.log('IPFS not supported, staying on HTTP/HTTPS version');
+        }
         window.addEventListener('keydown', handleKeydown);
         return () => {
             window.removeEventListener('keydown', handleKeydown);

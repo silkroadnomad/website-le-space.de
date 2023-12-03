@@ -1,7 +1,9 @@
 # Website www.le-space.de
 
 # Roadmap
-- Public GitHub Repo if possible 
+- deploy to ipfs 
+- Add a road map 
+- Public GitHub Repo where possible 
   - e.g. OrbitDB-Blog (fly in Github Icon)
   - Webanizer TB? 
 - Modify & Enable booking calendar (coziCal) 
@@ -14,6 +16,23 @@
 - Enable "Buy on OpenSea Button"
 - Integrate Social Media (X, LinkedIn)
 - Print T-Shirt
+
+# NFT
+## folders & files
+contracts
+scripts
+test
+hardhat.config.cjs
+
+## NFT usage
+- ```npx hardhat console```
+- ``` ```
+
+## NFT-resources
+- https://www.youtube.com/watch?v=tIHrNhr_OOQ
+- https://wizard.openzeppelin.com/#erc721
+- https://gist.github.com/shobhitic/5421cbf31492045cf5aac2fde50d833e
+
 
 ## Todos
 - Fix responsive for small phones
