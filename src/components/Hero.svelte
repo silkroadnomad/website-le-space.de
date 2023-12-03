@@ -11,7 +11,7 @@
             </Column>-->
             <Column>
                 <div class="title-text">
-                    <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" />
+<!--                    <img src="/le-space-ug.png" alt="Le Space Logo" class="logo" />-->
                         <h4>{headline} </h4>
                 </div>
             </Column>

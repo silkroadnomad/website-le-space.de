@@ -1,0 +1,1 @@
+const t={home:{data_protection:"Data Protection",imprint:"Imprint"},"info-panel":{year:"Year:",projects:"Project(s)",tech:"Tech",industry:"Industry",location:"Location"}},e={page:t};export{e as default,t as page};
