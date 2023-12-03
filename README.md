@@ -1,5 +1,9 @@
 # Website www.le-space.de
 
+if you have a ipfs capable browser such as Brave, you can find this website here: ipns://le-space.de 
+otherwise on https://ipfs.le-space.de/ipns/le-space.de
+or traditionally on https://le-space.de 
+
 # Roadmap
 - use svelte tiles (cards) instead of carousel
 - Add a road map 
