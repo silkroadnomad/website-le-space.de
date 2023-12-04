@@ -194,8 +194,8 @@
         display: block;
         pointer-events: all;
     }
-    :global(.sc-carousel__content-container) {
-        height: 30rem;
+    :global(.sc-carousel__pages-window) {
+        height: 50rem;
     }
     :global(.carusel) {
         margin-top: 2rem;
@@ -245,8 +245,8 @@
     }
     /* Adjust styles for screens smaller than 600px */
     @media (max-width: 600px) {
-        :global(.sc-carousel__content-container) {
-            height: 60vh;
+        :global(.sc-carousel__pages-window) {
+            height: 30vh;
         }
         :global(.sc-carousel__content-container img) {
             width: 100%;
@@ -258,7 +258,6 @@
             margin-top: 0rem;
         }
         .info-panel  {
-
             margin: 0.1rem; /* Adjust as needed */
             margin-bottom: 0rem;
             padding: 1rem; /* Adjust as needed */
