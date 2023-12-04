@@ -41,13 +41,14 @@
         /*background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);*/
         background-size: cover;
     }
-    .title-text {
+    :global(.title-text) {
         min-height: auto;
-        padding-top: 1rem;
+        min-height: auto;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     }
     h1 {
-        padding-top: 3rem;
+        padding-top: 2rem;
+        min-height: auto;
         margin-bottom: 0.2rem;
     }
     p {

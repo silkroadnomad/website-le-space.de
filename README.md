@@ -40,8 +40,10 @@ test
 hardhat.config.cjs
 
 ## NFT usage
+- ```cd hardhat```
+- ```npx hardhat node```
 - ```npx hardhat console```
-- ``` ```
+- deploy nft contract ```npx hardhat run scripts/LeSpace/deploy.sh```
 
 ## NFT-resources
 - https://www.youtube.com/watch?v=tIHrNhr_OOQ
