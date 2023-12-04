@@ -4,8 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
-		"build-ipfs": "vite build && chmod +x ./fix_build.sh && sh fix_build.sh",
+		"build": "vite dist-le-space.de-0.0.7",
+		"build-ipfs": "vite dist-le-space.de-0.0.7 && chmod +x ./fix_build.sh && sh fix_build.sh",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",

@@ -6,5 +6,7 @@ export const handle = async ({ event, resolve }) => {
     if (lang) {
         locale.set(lang)
     }
-    return resolve(event)
+    const response = await resolve(event);
+    response.headers.set('x-ipfs-path', 'ipns://le-space.de');
+    return response
 }
