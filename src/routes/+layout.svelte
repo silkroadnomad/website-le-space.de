@@ -31,10 +31,6 @@
 
     let isSideNavOpen = false;
 
-    let gdprBanner
-
-    // gdprBanner.show()
-
     export const load = async () => {
         if (browser) {
             locale.set(window.navigator.language.substring(0,2))

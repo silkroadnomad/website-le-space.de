@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
+    import { hash } from './router.js'
     import Hero from "../components/Hero.svelte"
     import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
@@ -9,10 +10,7 @@
     import {timeline_en, timeline_de} from "../timelines.js"
     import CarouselImage from "../components/CarouselImage.svelte";
 
-    let currentPage = 0
     let carousel
-    let showImage = true
-
     function goRight() {
         if (currentPage < timeline.length - 1) {
             currentPage++;
@@ -98,11 +96,22 @@
     // <!--{:else}-->
     // <!--    <iframe title="cosyCal" src="https://cozycal.com/le-space?show_embed_modal=1" style="width:100%;min-height:500px;border:none;"></iframe>-->
     // <!--{/if}-->
+
+
+    let showImage = true
     /**
      * Icons from: https://simpleicons.org/?q=ipfs
      */
     let timeline = [];
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
+    let currentPage = window.location.hash?timeline_de.findIndex(item => item.slug === window.location.hash.substring(1)):0;
+    // console.log(currentPage, window.location.hash.substring(1))
+    $: {
+         if (timeline[currentPage] && window.location.hash !== timeline[currentPage]?.slug) {
+            window.location.hash = timeline[currentPage]?.slug;
+         }
+    }
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -118,7 +127,7 @@
     <Row>
         <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-                <Carousel bind:this={carousel} on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
+                <Carousel bind:this={carousel} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
                     {#each timeline as item, index}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
