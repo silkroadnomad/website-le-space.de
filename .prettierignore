@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-/dist-le-space.de-0.0.7
+/build
+/dist-le-space*
 /.svelte-kit
 /package
 .env
