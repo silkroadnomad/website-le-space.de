@@ -82,12 +82,6 @@
     }
 
     onMount(() => {
-
-        if (window.ipfs || window.IpfsHttpClient) {
-            window.location.href = 'ipns://le-space.de';
-        } else {
-            console.log('IPFS not supported, staying on HTTP/HTTPS version');
-        }
         window.addEventListener('keydown', handleKeydown);
         return () => {
             window.removeEventListener('keydown', handleKeydown);
