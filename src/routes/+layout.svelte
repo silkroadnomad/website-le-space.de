@@ -9,12 +9,9 @@
     import {
         Theme, Header,
         HeaderNav,
-        HeaderNavItem, Column, Row, Grid,
         SideNav,
         SideNavItems,
-        SideNavLink,
-        SideNavMenu,
-        SideNavMenuItem, HeaderUtilities, HeaderGlobalAction,
+        SideNavLink, HeaderUtilities, HeaderGlobalAction,
     } from "carbon-components-svelte";
     import '$lib/i18n' //locales
     import "carbon-components-svelte/css/all.css";
@@ -72,6 +69,7 @@
 
 <!--<GdprBanner bind:this={gdprBanner} cookieName="le-space" description="Our booking calender still uses cookies...  " on:analytics={initAnalytics} />-->
 <Header
+        class="header-title"
         persistentHamburgerMenu={true}
         bind:isSideNavOpen
         company="Le Space"
@@ -120,5 +118,10 @@
     :global(.bx--list-box__menu-item, .bx--list-box__menu-item__option) {
         height: auto;
         background: black;
+    }
+    @media (max-width: 600px) {
+        :global(a.bx--header__name, a.bx--header__name:hover) {
+            font-size: 8px;
+        }
     }
 </style>

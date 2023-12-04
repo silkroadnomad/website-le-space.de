@@ -110,13 +110,12 @@
     let timeline = [];
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
 </script>
-<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground}
-     use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-    <img src={timeline[currentPage].image} />
+<div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
+     <img src={timeline[currentPage].image} />
 </div>
 <Grid class="grid" fullWidth>
     <Row>
-        <Column  sm={4}>
+        <Column sm={4}>
             <div on:dblclick={showBackground} role="button" tabindex="0">
                 <Hero headline={timeline[currentPage].headline}/>
             </div>

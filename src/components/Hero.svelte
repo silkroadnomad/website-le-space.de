@@ -42,6 +42,7 @@
         background-size: cover;
     }
     .title-text {
+        min-height: auto;
         padding-top: 1rem;
         font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     }
