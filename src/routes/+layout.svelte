@@ -70,7 +70,7 @@
         bind:isSideNavOpen
         company="Le Space"
         platformName={title}
-        href="/">
+        href="#/">
 
     <HeaderNav>
     </HeaderNav>
