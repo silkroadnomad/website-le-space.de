@@ -5,19 +5,33 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
-- Use Svelte tiles (cards) instead of carousel
-- Add a road map 
-- Add contact
-- Public GitHub Repo where possible 
-  - e.g. OrbitDB-Blog (fly in Github Icon)
-  - Webanizer TB? 
-- Modify & Enable booking calendar (coziCal) 
-- Create NFT-Contract (ERC721) for le-space on Polygon testnet
+- Test / fix project link (with hash) to social media read out twitter:card twitter:title etc.
+- NFTs
+  - Enable "Buy as NFT Button" on OpenSea 
+  - Claim NFT (transfer a token, with a signed tokenId by the owner)
+  - Mint NFT if not yet minted
+  - Animate NFTs (for next release)
+- Modify & Enable booking calendar (coziCal)
+- Offer Decentralized Address Link Subscription (with Plugin)
+- Offer Subscription to Skills and Projects 
+- New MenuItems
+  - Le Space DAO
+    - Proposals
+    - Autonomics
+    - Roadmap
+  - Add contact
+  - Add Project menu item and display all projects in a data table (with filter)  
+  - Add Skills menu item by name, icon and display all skills alphabetically, by date with filter
+  - Add Locations menu item and display all work locations by name, year and project name 
 - Marketing concept
 - Add Terms & Conditions to Le Space UG
   - DAO and NFT concept
-- Animate NFTs
-- Mint NFTs
+- Public GitHub Repo where possible
+  - e.g. OrbitDB-Blog (fly in Github Icon)
+  - Webanizer TB?
+- Use Svelte tiles (cards) instead of carousel
+
+
 - Enable "Buy on OpenSea Button"
 - Integrate Social Media (X, LinkedIn)
 - Print T-Shirt
@@ -37,7 +51,7 @@ or traditionally on https://le-space.de
 contracts
 scripts
 test
-hardhat.config.cjs
+hardhat.config.ts
 
 ## NFT usage
 - ```cd hardhat```

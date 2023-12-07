@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
-    import { hash } from './router.js'
+    import { currentImage } from '../store.js';
     import Hero from "../components/Hero.svelte"
     import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
@@ -105,12 +105,13 @@
     let timeline = [];
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
     let currentPage = window.location.hash?timeline_de.findIndex(item => item.slug === window.location.hash.substring(1)):0;
-    // console.log(currentPage, window.location.hash.substring(1))
     $: {
          if (timeline[currentPage] && window.location.hash !== timeline[currentPage]?.slug) {
             window.location.hash = timeline[currentPage]?.slug;
+            currentImage.set(timeline[currentPage].image);
          }
     }
+
 
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>

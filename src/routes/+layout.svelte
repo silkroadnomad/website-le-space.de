@@ -2,10 +2,10 @@
     import { browser } from '$app/environment'
     import {PUBLIC_WEB_URL} from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
-    import { Dropdown } from "carbon-components-svelte";
+    import { currentImage } from './routes/router.js';
     import { De,Gb } from 'svelte-flag-icons';
-    import GdprBanner from '@beyonk/gdpr-cookie-consent-banner'
     import {timeline_en, timeline_de} from "../timelines.js"
+
     import {
         Theme, Header,
         HeaderNav,
@@ -26,8 +26,10 @@
         description += item.headline + " ";
     });
     const url = "https://le-space.de"
-    const image = PUBLIC_WEB_URL+"/le-space-ug.png"
+    let image = PUBLIC_WEB_URL+"/le-space-ug.png"
     const favicon = "./favicon.ico"
+
+    $:image = PUBLIC_WEB_URL+"/"+currentImage
 
     let isSideNavOpen = false;
 

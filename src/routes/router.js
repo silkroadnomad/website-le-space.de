@@ -1,5 +1,6 @@
-import { readable } from 'svelte/store'
+import { readable, writable } from 'svelte/store'
 
+export const currentImage = writable('');
 function getHash () {
     const hashWithQueryParam = location.hash.replace(/^#/, '')
     return hashWithQueryParam.indexOf('?')!==-1?hashWithQueryParam.substring(0,hashWithQueryParam.indexOf('?')):hashWithQueryParam
