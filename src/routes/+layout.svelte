@@ -2,7 +2,7 @@
     import { browser } from '$app/environment'
     import {PUBLIC_WEB_URL} from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
-    import { currentImage } from './routes/router.js';
+    import { currentImage } from './router.js';
     import { De,Gb } from 'svelte-flag-icons';
     import {timeline_en, timeline_de} from "../timelines.js"
 

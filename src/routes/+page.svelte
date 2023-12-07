@@ -1,11 +1,11 @@
 <script>
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
-    import { currentImage } from '../store.js';
+    import { currentImage } from '../routes/router.js';
     import Hero from "../components/Hero.svelte"
     import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
-    import {Column, Grid, Row, SideNav, SideNavItems, SideNavLink} from "carbon-components-svelte";
+    import {Column, Grid, Row} from "carbon-components-svelte";
     import Carousel from 'svelte-carousel';
     import {timeline_en, timeline_de} from "../timelines.js"
     import CarouselImage from "../components/CarouselImage.svelte";
