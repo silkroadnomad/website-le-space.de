@@ -1,0 +1,24 @@
+{
+  "name": "nft-test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.0.0",
+    "rm": "^0.1.8"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "@openzeppelin/hardhat-upgrades": "^2.5.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0",
+    "ipfs-http-client": "^60.0.1"
+  }
+}

@@ -1,9 +1,9 @@
-import {
+const {
   time,
   loadFixture,
-} from "@nomicfoundation/hardhat-toolbox/network-helpers.js";
-import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs.js";
-import { expect } from "chai";
+} = require("@nomicfoundation/hardhat-toolbox/network-helpers");
+const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
+const { expect } = require("chai");
 
 describe("Lock", function () {
   // We define a fixture to reuse the same setup in every test.
@@ -38,7 +38,7 @@ describe("Lock", function () {
       expect(await lock.owner()).to.equal(owner.address);
     });
 
-    it("Should receive and store the funds to Lock", async function () {
+    it("Should receive and store the funds to lock", async function () {
       const { lock, lockedAmount } = await loadFixture(
         deployOneYearLockFixture
       );
@@ -76,7 +76,7 @@ describe("Lock", function () {
         // We can increase the time in Hardhat Network
         await time.increaseTo(unlockTime);
 
-        // We use Lock.connect() to send a transaction from another account
+        // We use lock.connect() to send a transaction from another account
         await expect(lock.connect(otherAccount).withdraw()).to.be.revertedWith(
           "You aren't the owner"
         );
