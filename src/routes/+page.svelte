@@ -107,7 +107,7 @@
             const slugTrait = nft.attributes.find(at => at.trait_type === 'slug');
             return {...nft, slug: slugTrait ? slugTrait.value : null};
         });
-
+        console.log("nftsMapped",nftsMapped)
         return () => {
             window.removeEventListener('keydown', handleKeydown);
         };
@@ -157,7 +157,7 @@
         <Column class="carousel" sm={4}>
             <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
-                    {#each timeline as item, index}
+                    {#each timeline as item}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             {#if (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
                              <button class="buy-nft"
