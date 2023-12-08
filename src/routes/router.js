@@ -1,14 +1,18 @@
 import { readable, writable } from 'svelte/store'
-
+import { browser } from '$app/environment';
 export const currentImage = writable('');
 function getHash () {
-    const hashWithQueryParam = location.hash.replace(/^#/, '')
-    return hashWithQueryParam.indexOf('?')!==-1?hashWithQueryParam.substring(0,hashWithQueryParam.indexOf('?')):hashWithQueryParam
+    if(browser){
+        const hashWithQueryParam = location.hash.replace(/^#/, '')
+        return hashWithQueryParam.indexOf('?')!==-1?hashWithQueryParam.substring(0,hashWithQueryParam.indexOf('?')):hashWithQueryParam
+    }
 }
 
 function getQuery(){
-    const hashWithQueryParam = location.hash.replace(/^#/, '')
-    return hashWithQueryParam.indexOf('?')!==-1?hashWithQueryParam.substring(hashWithQueryParam.indexOf('?')+1,hashWithQueryParam.length):undefined
+    if(browser) {
+        const hashWithQueryParam = location.hash.replace(/^#/, '')
+        return hashWithQueryParam.indexOf('?') !== -1 ? hashWithQueryParam.substring(hashWithQueryParam.indexOf('?') + 1, hashWithQueryParam.length) : undefined
+    }
 }
 
 export const hash = new readable(getHash(), set => {

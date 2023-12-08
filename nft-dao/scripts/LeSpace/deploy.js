@@ -8,8 +8,8 @@ async function main() {
       {kind: "uups"});
 
   const instance = await lespace.waitForDeployment();
-  console.log("instance", instance.target)
-
+  console.log("TODO please update contract address for mainnet/testnet hardhat ",instance.target)
+  console.log("TODO - please copy ABI.json into svelte src directory ")
 }
 
 main().catch((error) => {

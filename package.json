@@ -40,5 +40,8 @@
 		"vite": "^4.5.0",
 		"vitest": "^0.32.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"ethers": "^6.9.0"
+	}
 }

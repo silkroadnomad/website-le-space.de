@@ -9,6 +9,9 @@
     import Carousel from 'svelte-carousel';
     import {timeline_en, timeline_de} from "../timelines.js"
     import CarouselImage from "../components/CarouselImage.svelte";
+    import {loadNFTs} from "../loadNfts.js";
+    import { env } from '$env/dynamic/public';
+    import {browser} from "$app/environment";
 
     let carousel
     function goRight() {
@@ -79,12 +82,26 @@
         }
     }
 
-    onMount(() => {
+    onMount(async () => {
         window.addEventListener('keydown', handleKeydown);
+
+        let providerUrl = env.PUBLIC_HARDHAT_PROVIDER_URL
+        let contractAddress = env.PUBLIC_HARDHAT_CONTRACT_ADDRESS
+        if(env.PUBLIC_NETWORK==='testnet'){
+            providerUrl = env.PUBLIC_TESTNET_PROVIDER_URL
+            contractAddress = env.PUBLIC_TESTNET_CONTRACT_ADDRESS
+        }
+        if(env.PUBLIC_NETWORK==='mainnet'){
+            providerUrl=env.PUBLIC_MAINNET_PROVIDER_URL
+            contractAddress= env.PUBLIC_MAINNET_CONTRACT_ADDRESS
+        }
+
+        const nfts = await loadNFTs(providerUrl,contractAddress)
+        console.log("nfts",nfts)
         return () => {
             window.removeEventListener('keydown', handleKeydown);
         };
-    });
+    }   );
 
     function getIconDetails(icon) {
         const [name, extension = 'svg'] = icon.split('.');
@@ -104,15 +121,16 @@
      */
     let timeline = [];
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
-    let currentPage = window.location.hash?timeline_de.findIndex(item => item.slug === window.location.hash.substring(1)):0;
-    $: {
-         if (timeline[currentPage] && window.location.hash !== timeline[currentPage]?.slug) {
-            window.location.hash = timeline[currentPage]?.slug;
-            currentImage.set(timeline[currentPage].image);
-         }
-    }
-
-
+    let currentPage = window?.location.hash?timeline_de.findIndex(item => item.slug === window?.location.hash.substring(1)):0;
+    // if(browser) {
+        $: {
+            if (currentPage === -1) currentPage = 0
+            if (timeline[currentPage] && window?.location.hash !== timeline[currentPage]?.slug) {
+                window.location.hash = timeline[currentPage]?.slug;
+                currentImage.set(timeline[currentPage].image);
+            }
+        }
+    // }
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />

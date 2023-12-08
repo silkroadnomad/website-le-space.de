@@ -5,7 +5,6 @@
     import { currentImage } from './router.js';
     import { De,Gb } from 'svelte-flag-icons';
     import {timeline_en, timeline_de} from "../timelines.js"
-
     import {
         Theme, Header,
         HeaderNav,

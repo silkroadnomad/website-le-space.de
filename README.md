@@ -5,7 +5,9 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
-- Test / fix project link (with hash) to social media read out twitter:card twitter:title etc.
+- Test / fix project link (with hash) to social media read out Open Graphtwitter:card twitter:title etc.
+  - Javascript gets not interpreted by crawler.
+  - https://discuss.ipfs.tech/t/how-to-use-ipfs-images-media-types-in-open-graph-tags/10518/3
 - NFTs
   - Enable "Buy as NFT Button" on OpenSea 
   - Claim NFT (transfer a token, with a signed tokenId by the owner)
