@@ -11,9 +11,11 @@
     import CarouselImage from "../components/CarouselImage.svelte";
     import {loadNFTs} from "../loadNfts.js";
     import { env } from '$env/dynamic/public';
-    import {browser} from "$app/environment";
+    import { createHelia } from 'helia'
 
     let carousel
+    let nftsMapped;
+
     function goRight() {
         if (currentPage < timeline.length - 1) {
             currentPage++;
@@ -82,7 +84,8 @@
         }
     }
 
-    onMount(async () => {
+    onMount( async () => {
+        const helia = await createHelia()
         window.addEventListener('keydown', handleKeydown);
 
         let providerUrl = env.PUBLIC_HARDHAT_PROVIDER_URL
@@ -96,8 +99,15 @@
             contractAddress= env.PUBLIC_MAINNET_CONTRACT_ADDRESS
         }
 
-        const nfts = await loadNFTs(providerUrl,contractAddress)
-        console.log("nfts",nfts)
+        /**
+         * We load the currently minted NFTs from the contract. For the minted one's we display the BUY-NFT button
+         */
+        const nfts = await loadNFTs(helia,providerUrl,contractAddress)
+        nftsMapped = nfts.map(nft => {
+            const slugTrait = nft.attributes.find(at => at.trait_type === 'slug');
+            return {...nft, slug: slugTrait ? slugTrait.value : null};
+        });
+
         return () => {
             window.removeEventListener('keydown', handleKeydown);
         };
@@ -122,15 +132,15 @@
     let timeline = [];
     $:$locale==="de"?timeline=timeline_de:timeline=timeline_en
     let currentPage = window?.location.hash?timeline_de.findIndex(item => item.slug === window?.location.hash.substring(1)):0;
-    // if(browser) {
-        $: {
-            if (currentPage === -1) currentPage = 0
-            if (timeline[currentPage] && window?.location.hash !== timeline[currentPage]?.slug) {
-                window.location.hash = timeline[currentPage]?.slug;
-                currentImage.set(timeline[currentPage].image);
-            }
+
+    $: {
+        if (currentPage === -1) currentPage = 0
+        if (timeline[currentPage] && window?.location.hash !== timeline[currentPage]?.slug) {
+            window.location.hash = timeline[currentPage]?.slug;
+            currentImage.set(timeline[currentPage].image);
         }
-    // }
+    }
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -149,7 +159,12 @@
                 <Carousel bind:this={carousel} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
                     {#each timeline as item, index}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
-                            <button class="buy-nft" on:click={() => window.open('https://opensea.io/assets/your-nft-link', '_blank')} transition:fly={{ y: 800, duration: 500 }}>Buy as NFT</button>
+                            {#if (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
+                             <button class="buy-nft"
+                                     on:click={() => window.open(`https://testnets.opensea.io/assets/mumbai/0x779eadd5a956a1b71ddbdf2a245cbe2ea5f59048/${nftsMapped.findIndex(it=>it.slug===item.slug)}`, '_blank')}
+                                     transition:fly={{ y: 800, duration: 500 }}
+                             >Buy NFT and join virtual coworking dao {nftsMapped.length} { nftsMapped?.findIndex(it=>it.slug===item.slug)}</button>
+                            {/if}
                         </CarouselImage>
                     {/each}
                 </Carousel>
@@ -262,7 +277,7 @@
     }
     /** enable when going live with NFT*/
     :global(.carousel-image:hover .buy-nft) {
-        opacity: 0;
+        opacity: 1;
     }
     /* Adjust styles for screens smaller than 600px */
     @media (max-width: 600px) {
@@ -279,9 +294,9 @@
             margin-top: 0rem;
         }
         .info-panel  {
-            margin: 0.1rem; /* Adjust as needed */
+            margin: 0.1rem;
             margin-bottom: 0rem;
-            padding: 1rem; /* Adjust as needed */
+            padding: 1rem;
         }
     }
 </style>

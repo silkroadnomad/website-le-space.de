@@ -5,26 +5,26 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
-- Test / fix project link (with hash) to social media read out Open Graphtwitter:card twitter:title etc.
-  - Javascript gets not interpreted by crawler.
-  - https://discuss.ipfs.tech/t/how-to-use-ipfs-images-media-types-in-open-graph-tags/10518/3
 - NFTs
-  - Enable "Buy as NFT Button" on OpenSea 
   - Claim NFT (transfer a token, with a signed tokenId by the owner)
   - Mint NFT if not yet minted
   - Animate NFTs (for next release)
-- Modify & Enable booking calendar (coziCal)
-- Offer Decentralized Address Link Subscription (with Plugin)
-- Offer Subscription to Skills and Projects 
+- IPFS 
 - New MenuItems
   - Le Space DAO
     - Proposals
     - Autonomics
     - Roadmap
   - Add contact
-  - Add Project menu item and display all projects in a data table (with filter)  
+  - Add Project menu item and display all projects in a data table (with filter)
   - Add Skills menu item by name, icon and display all skills alphabetically, by date with filter
-  - Add Locations menu item and display all work locations by name, year and project name 
+  - Add Locations menu item and display all work locations by name, year and project name
+- Test / fix project link (with hash) to social media read out Open Graphtwitter:card twitter:title etc.
+  - Javascript gets not interpreted by crawler.
+  - https://discuss.ipfs.tech/t/how-to-use-ipfs-images-media-types-in-open-graph-tags/10518/3
+- Modify & Enable booking calendar (coziCal)
+- Offer Decentralized Address Link Subscription (with Plugin)
+- Offer Subscription to Skills and Projects
 - Marketing concept
 - Add Terms & Conditions to Le Space UG
   - DAO and NFT concept
