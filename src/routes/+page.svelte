@@ -245,7 +245,7 @@
         pointer-events: all;
     }
     :global(.sc-carousel__pages-window) {
-        height: 50rem;
+        height: 30rem;
     }
     :global(.carusel) {
         margin-top: 2rem;

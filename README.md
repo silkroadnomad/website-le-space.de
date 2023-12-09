@@ -5,17 +5,19 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
+- Setup JitsiMeet Instance (with lots of lots of CPU and RAM)
 - NFTs
   - Claim NFT (transfer a token, with a signed tokenId by the owner)
-  - Mint NFT if not yet minted
-  - Animate NFTs (for next release)
+  - Mint NFT (if not yet minted)
+  - Animate NFTs (for next collection release)
 - IPFS 
+  - show connected peers
 - New MenuItems
   - Le Space DAO
     - Proposals
-    - Autonomics
+    - Tokenomics
     - Roadmap
-  - Add contact
+  - Add contact 
   - Add Project menu item and display all projects in a data table (with filter)
   - Add Skills menu item by name, icon and display all skills alphabetically, by date with filter
   - Add Locations menu item and display all work locations by name, year and project name
