@@ -127,8 +127,8 @@
 <slot></slot>
 {/if}
 <style>
-    :global(.peers) {
-        margin: 10px;
+    .peers {
+        margin: 25px;
         display: flex;
         justify-content: space-between;
     }
