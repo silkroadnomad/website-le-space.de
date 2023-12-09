@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { fly } from 'svelte/transition';
-    import { currentImage } from '../routes/router.js';
+    import { helia,currentImage } from '../routes/router.js';
     import Hero from "../components/Hero.svelte"
     import { swipe } from 'svelte-gestures';
     import {_, isLoading, locale} from "svelte-i18n";
@@ -11,7 +11,7 @@
     import CarouselImage from "../components/CarouselImage.svelte";
     import {loadNFTs} from "../loadNfts.js";
     import { env } from '$env/dynamic/public';
-    import { createHelia } from 'helia'
+
 
     let carousel
     let nftsMapped;
@@ -85,11 +85,25 @@
     }
 
     onMount( async () => {
-        const helia = await createHelia()
-        window.addEventListener('keydown', handleKeydown);
 
+        window.addEventListener('keydown', handleKeydown);
+        return () => {
+            window.removeEventListener('keydown', handleKeydown);
+        };
+    });
+
+    /**
+     * We load the currently minted NFTs from the contract. For the minted one's we display the BUY-NFT button
+     */
+    $:{
+        if($helia){
+            nftLoader($helia)
+        }
+    }
+    async function nftLoader(_helia){
         let providerUrl = env.PUBLIC_HARDHAT_PROVIDER_URL
         let contractAddress = env.PUBLIC_HARDHAT_CONTRACT_ADDRESS
+
         if(env.PUBLIC_NETWORK==='testnet'){
             providerUrl = env.PUBLIC_TESTNET_PROVIDER_URL
             contractAddress = env.PUBLIC_TESTNET_CONTRACT_ADDRESS
@@ -98,21 +112,13 @@
             providerUrl=env.PUBLIC_MAINNET_PROVIDER_URL
             contractAddress= env.PUBLIC_MAINNET_CONTRACT_ADDRESS
         }
-
-        /**
-         * We load the currently minted NFTs from the contract. For the minted one's we display the BUY-NFT button
-         */
-        const nfts = await loadNFTs(helia,providerUrl,contractAddress)
+        const nfts = await loadNFTs(_helia,providerUrl,contractAddress)
         nftsMapped = nfts.map(nft => {
             const slugTrait = nft.attributes.find(at => at.trait_type === 'slug');
             return {...nft, slug: slugTrait ? slugTrait.value : null};
         });
         console.log("nftsMapped",nftsMapped)
-        return () => {
-            window.removeEventListener('keydown', handleKeydown);
-        };
-    }   );
-
+    }
     function getIconDetails(icon) {
         const [name, extension = 'svg'] = icon.split('.');
         return { name, extension };

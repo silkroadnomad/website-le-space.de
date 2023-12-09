@@ -1,8 +1,9 @@
 <script>
+    import { createHelia } from 'helia'
     import { browser } from '$app/environment'
     import {PUBLIC_WEB_URL} from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
-    import { currentImage } from './router.js';
+    import { currentImage,helia } from './router.js';
     import { De,Gb } from 'svelte-flag-icons';
     import {timeline_en, timeline_de} from "../timelines.js"
     import {
@@ -14,7 +15,8 @@
     } from "carbon-components-svelte";
     import '$lib/i18n' //locales
     import "carbon-components-svelte/css/all.css";
-    import '@beyonk/gdpr-cookie-consent-banner/banner.css' // optional, you can also define your own styles
+    import '@beyonk/gdpr-cookie-consent-banner/banner.css'
+    import {onMount} from "svelte"; // optional, you can also define your own styles
     let title = '';
     $:$locale==='de'?title = timeline_de[0].headline:title = timeline_en[0].headline;
     let description = "";
@@ -31,7 +33,9 @@
     $:image = PUBLIC_WEB_URL+"/"+currentImage
 
     let isSideNavOpen = false;
-
+    onMount(async ()=>{
+        $helia = await createHelia()
+    })
     export const load = async () => {
         if (browser) {
             locale.set(window.navigator.language.substring(0,2))
