@@ -39,21 +39,23 @@
         }
         await waitLocale()
     }
+
     onMount(async ()=>{
         $helia = await createHelia()
         $helia.libp2p.addEventListener('connection:open',  () => {
             connectedPeers.update(n => n + 1);
         });
         $helia.libp2p.addEventListener('connection:close', () => {
-                connectedPeers.update(n => n - 1);
+            connectedPeers.update(n => n - 1);
         });
         // $helia.libp2p.addEventListener('peer:discovery', (e) => {
         //     console.log("v",e)
         // });
-        $helia.libp2p.addEventListener('self:peer:update', (e) => {
-            console.log("self:peer:update",e)
-        });
+        // $helia.libp2p.addEventListener('self:peer:update', (e) => {
+        //     console.log("self:peer:update",e)
+        // });
     })
+
     $:console.log("connected peers",$connectedPeers)
     const initAnalytics = () => { }
     let theme = "g80";
