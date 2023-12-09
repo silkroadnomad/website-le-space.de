@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@helia/unixfs": "^1.4.3",
 		"ethers": "^6.9.0",
-		"helia": "^2.1.0"
+		"helia": "^2.1.0",
+		"svelte-marquee-text-widget": "^1.1.0"
 	}
 }

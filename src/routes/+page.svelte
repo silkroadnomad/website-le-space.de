@@ -1,17 +1,17 @@
 <script>
-    import { onMount } from 'svelte';
-    import { fly } from 'svelte/transition';
-    import { helia,currentImage } from '../routes/router.js';
-    import Hero from "../components/Hero.svelte"
-    import { swipe } from 'svelte-gestures';
-    import {_, isLoading, locale} from "svelte-i18n";
-    import {Column, Grid, Row} from "carbon-components-svelte";
-    import Carousel from 'svelte-carousel';
-    import {timeline_en, timeline_de} from "../timelines.js"
-    import CarouselImage from "../components/CarouselImage.svelte";
-    import {loadNFTs} from "../loadNfts.js";
     import { env } from '$env/dynamic/public';
-
+    import { onMount } from 'svelte';
+    import { swipe } from 'svelte-gestures';
+    import { fly } from 'svelte/transition';
+    import {_, isLoading, locale} from "svelte-i18n";
+    import Carousel from 'svelte-carousel';
+    import MarqueeTextWidget from "svelte-marquee-text-widget";
+    import {Column, Grid, Row} from "carbon-components-svelte";
+    import Hero from "../components/Hero.svelte"
+    import CarouselImage from "../components/CarouselImage.svelte";
+    import { helia,currentImage } from '../routes/router.js';
+    import {timeline_en, timeline_de} from "../timelines.js"
+    import {loadNFTs} from "../loadNfts.js";
 
     let carousel
     let nftsMapped;
@@ -124,13 +124,6 @@
         return { name, extension };
     }
 
-    // <!--{#if $locale==="de"}-->
-    // <!--    <iframe title="cosyCal" src="https://cozycal.com/it-consulting-de" style="width:100%;min-height:500px;border:none;"></iframe>-->
-    // <!--{:else}-->
-    // <!--    <iframe title="cosyCal" src="https://cozycal.com/le-space?show_embed_modal=1" style="width:100%;min-height:500px;border:none;"></iframe>-->
-    // <!--{/if}-->
-
-
     let showImage = true
     /**
      * Icons from: https://simpleicons.org/?q=ipfs
@@ -153,6 +146,18 @@
         buttonVisible = !buttonVisible;
     }
 
+    let infoData = [
+        {label: 'page.info-panel.year', value: () => timeline[currentPage].year},
+        {label: 'page.info-panel.projects', value: () => timeline[currentPage].projects},
+        {label: 'page.info-panel.tech', value: () => timeline[currentPage].technologies},
+        {label: 'page.info-panel.industry', value: () => timeline[currentPage].industry},
+        {label: 'page.info-panel.location', value: () => timeline[currentPage].location}
+    ];
+    let currentIndex = 0;
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % infoData.length;
+    }, 500);
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -189,29 +194,43 @@
         <Column sm={4} md={4} lg={8}>
             <div class="info-panel">
                 <table>
-                    <tr><td>{$_('page.info-panel.year')}</td><td>:</td><td>{timeline[currentPage].year}</td></tr>
-                    <tr><td>{$_('page.info-panel.projects')}</td><td>:</td><td>{timeline[currentPage].projects}</td></tr>
-                    <tr><td>{$_('page.info-panel.tech')}</td><td>:</td><td>{timeline[currentPage].technologies}</td></tr>
-                    <tr><td>{$_('page.info-panel.industry')}</td><td>:</td><td>{timeline[currentPage].industry}</td></tr>
-                    <tr><td>{$_('page.info-panel.location')}</td><td>:</td><td>{timeline[currentPage].location}</td></tr>
+                    {#each [infoData[currentIndex], infoData[(currentIndex + 1) % infoData.length]] as item, i (item.label)}
+                        <tr transition:fly="{{ y: i === 0 ? 800 : -800, duration: 500, delay: i === 0 ? 0 : 500 }}">
+                            <td>{$_(item.label)}</td><td>:</td><td>{item.value()}</td>
+                        </tr>
+                    {/each}
                 </table>
             </div>
         </Column>
         <Column sm={4} md={4} lg={8}>
-            <div class="icon-panel">
-              {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
+            <MarqueeTextWidget duration="{30}">
+                {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
                     { #each timeline[currentPage].icons as icon }
-                             {#if icon}
-                              <a href={icon.url} target="_blank">
-                                  <img title={getIconDetails(icon.icon).name}
-                                       src={`/simple-icons/${getIconDetails(icon.icon).name}.${getIconDetails(icon.icon).extension}`}
-                                       style="margin: 0.3rem"
-                                       height="42"  />
-                              </a>
-                             {/if}
-                     {/each}
+                        {#if icon}
+                            <a href={icon.url} target="_blank" style="margin-left: 2rem;">
+                                <img title={getIconDetails(icon.icon).name}
+                                     src={`/simple-icons/${getIconDetails(icon.icon).name}.${getIconDetails(icon.icon).extension}`}
+                                     style="margin: 0.3rem"
+                                     height="42"  />
+                            </a>
+                        {/if}
+                    {/each}
                 {/if}
-            </div>
+            </MarqueeTextWidget>
+            <!--        <div class="icon-panel">
+                      {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
+                            { #each timeline[currentPage].icons as icon }
+                                     {#if icon}
+                                      <a href={icon.url} target="_blank">
+                                          <img title={getIconDetails(icon.icon).name}
+                                               src={`/simple-icons/${getIconDetails(icon.icon).name}.${getIconDetails(icon.icon).extension}`}
+                                               style="margin: 0.3rem"
+                                               height="42"  />
+                                      </a>
+                                     {/if}
+                             {/each}
+                        {/if}
+            </div>-->
         </Column>
     </Row>
 </Grid>
