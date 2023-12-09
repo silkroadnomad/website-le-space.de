@@ -141,6 +141,12 @@
         }
     }
 
+    let buttonVisible = false;
+
+    function toggleBuyNFTButton() {
+        buttonVisible = !buttonVisible;
+    }
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -155,15 +161,17 @@
     </Row>
     <Row>
         <Column class="carousel" sm={4}>
-            <div id="carousel" class="visible" on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
+            <div id="carousel" class="visible"
+                 on:mouseenter={toggleBuyNFTButton} on:mouseleave={toggleBuyNFTButton}
+                 on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
                 <Carousel bind:this={carousel} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
                     {#each timeline as item}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
-                            {#if (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
+                            {#if buttonVisible && (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
                              <button class="buy-nft"
                                      on:click={() => window.open(`https://testnets.opensea.io/assets/mumbai/0x779eadd5a956a1b71ddbdf2a245cbe2ea5f59048/${nftsMapped.findIndex(it=>it.slug===item.slug)}`, '_blank')}
                                      transition:fly={{ y: 800, duration: 500 }}
-                             >Buy NFT and join virtual coworking dao {nftsMapped.length} { nftsMapped?.findIndex(it=>it.slug===item.slug)}</button>
+                             >{$_('page.nft-button.label')}</button>
                             {/if}
                         </CarouselImage>
                     {/each}
@@ -263,7 +271,7 @@
         position: absolute;
         margin: 100px;
         padding: 10px;
-        width: 100px;
+        width: 200px;
         transform: translateX(-50%);
         background-color: #0070f3;
         color: #fff;

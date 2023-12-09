@@ -4,6 +4,9 @@
       "data_protection": "Data Protection",
       "imprint": "Imprint"
     },
+    "nft-button": {
+      "label": "Buy a Le-Space NFT and join the Le Space Remote Coworking DAO, now live on the Polygon Testnet!"
+    },
     "info-panel": {
       "year": "Year:",
       "projects": "Project(s)",
