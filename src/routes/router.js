@@ -2,6 +2,8 @@ import { readable, writable } from 'svelte/store'
 import { browser } from '$app/environment';
 
 export const helia = writable();
+export const connectedPeers = writable(0);
+
 export const currentImage = writable('');
 function getHash () {
     if(browser){

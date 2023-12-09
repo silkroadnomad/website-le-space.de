@@ -3,7 +3,7 @@
     import { browser } from '$app/environment'
     import {PUBLIC_WEB_URL} from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
-    import { currentImage,helia } from './router.js';
+    import { currentImage, helia, connectedPeers } from './router.js';
     import { De,Gb } from 'svelte-flag-icons';
     import {timeline_en, timeline_de} from "../timelines.js"
     import {
@@ -13,10 +13,10 @@
         SideNavItems,
         SideNavLink, HeaderUtilities, HeaderGlobalAction,
     } from "carbon-components-svelte";
-    import '$lib/i18n' //locales
+    import '$lib/i18n'
     import "carbon-components-svelte/css/all.css";
     import '@beyonk/gdpr-cookie-consent-banner/banner.css'
-    import {onMount} from "svelte"; // optional, you can also define your own styles
+    import {onMount} from "svelte";
     let title = '';
     $:$locale==='de'?title = timeline_de[0].headline:title = timeline_en[0].headline;
     let description = "";
@@ -33,15 +33,28 @@
     $:image = PUBLIC_WEB_URL+"/"+currentImage
 
     let isSideNavOpen = false;
-    onMount(async ()=>{
-        $helia = await createHelia()
-    })
     export const load = async () => {
         if (browser) {
             locale.set(window.navigator.language.substring(0,2))
         }
         await waitLocale()
     }
+    onMount(async ()=>{
+        $helia = await createHelia()
+        $helia.libp2p.addEventListener('connection:open',  () => {
+            connectedPeers.update(n => n + 1);
+        });
+        $helia.libp2p.addEventListener('connection:close', () => {
+                connectedPeers.update(n => n - 1);
+        });
+        // $helia.libp2p.addEventListener('peer:discovery', (e) => {
+        //     console.log("v",e)
+        // });
+        $helia.libp2p.addEventListener('self:peer:update', (e) => {
+            console.log("self:peer:update",e)
+        });
+    })
+    $:console.log("connected peers",$connectedPeers)
     const initAnalytics = () => { }
     let theme = "g80";
 </script>
@@ -80,6 +93,9 @@
     <HeaderNav>
     </HeaderNav>
     <HeaderUtilities>
+        <div class="peers">
+            LibP2P Peers connected: {$connectedPeers}
+        </div>
         <div class="flags">
             <De style="margin-right: 10px" on:click={()=>$locale="de"}/>
             <Gb style="margin-right: 10px"  on:click={()=>$locale="en"}/>
@@ -111,6 +127,11 @@
 <slot></slot>
 {/if}
 <style>
+    :global(.peers) {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
     .flags {
         margin: 10px;
         display: flex;
