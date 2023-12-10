@@ -134,6 +134,7 @@
     $: {
         if (currentPage === -1) currentPage = 0
         if (timeline[currentPage] && window?.location.hash !== timeline[currentPage]?.slug) {
+            flicker=true
             window.location.hash = timeline[currentPage]?.slug;
             currentImage.set(timeline[currentPage].image);
         }
@@ -153,10 +154,18 @@
         {label: 'page.info-panel.location', value: () => timeline[currentPage].location}
     ];
     let currentIndex = 0;
-
+    let displayData = [infoData[currentIndex]];
+    let flicker = false;
+    currentIndex++;
     setInterval(() => {
-        currentIndex = (currentIndex + 1) % infoData.length;
-    }, 2500);
+        displayData = [...displayData, infoData[currentIndex]];
+        currentIndex = (currentIndex + 1) % (infoData.length+1);
+        if (currentIndex === 0) {
+            displayData = [];
+        }
+        else flicker=false
+    }, 1000);
+
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -174,7 +183,7 @@
             <div id="carousel" class="visible"
                  on:mouseenter={toggleBuyNFTButton} on:mouseleave={toggleBuyNFTButton}
                  on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-                <Carousel bind:this={carousel} pauseOnFocus={true} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={3500}>
+                <Carousel bind:this={carousel} pauseOnFocus={true} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={5000} duration={500}>
                     {#each timeline as item}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             {#if buttonVisible && (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
@@ -191,11 +200,10 @@
     </Row>
     <Row>
         <Column sm={4} md={4} lg={8}>
-            <div class="info-panel">
+            <div class="info-panel {flicker ? 'flicker' : ''}">
                 <table>
-                    {#each [infoData[currentIndex], infoData[(currentIndex + 1) % infoData.length]] as item, i (item.label)}
+                    {#each displayData as item, i (item.label)}
                         <tr>
-<!--                                transition:fly="{{ y: i === 0 ? 800 : -800, duration: 500, delay: i === 0 ? 0 : 500 }}">-->
                             <td>{$_(item.label)}</td><td>:</td><td>{item.value()}</td>
                         </tr>
                     {/each}
@@ -217,24 +225,19 @@
                     {/each}
                 {/if}
             </MarqueeTextWidget>
-            <!--        <div class="icon-panel">
-                      {#if timeline[currentPage]?.icons && timeline[currentPage]?.icons.length>0}
-                            { #each timeline[currentPage].icons as icon }
-                                     {#if icon}
-                                      <a href={icon.url} target="_blank">
-                                          <img title={getIconDetails(icon.icon).name}
-                                               src={`/simple-icons/${getIconDetails(icon.icon).name}.${getIconDetails(icon.icon).extension}`}
-                                               style="margin: 0.3rem"
-                                               height="42"  />
-                                      </a>
-                                     {/if}
-                             {/each}
-                        {/if}
-            </div>-->
         </Column>
     </Row>
 </Grid>
 <style>
+    @keyframes flicker {
+        0%, 100% { opacity: 1; background-color: inherit; }
+        33% { opacity: 0.5; background-color: yellow; }
+        66% { opacity: 1; background-color: inherit; }
+    }
+
+    .flicker {
+        animation: flicker 1.5s linear;
+    }
     td {
         padding: 0 10px;
     }
@@ -273,6 +276,8 @@
         margin-top: 2rem;
     }
     .info-panel {
+        height: 120px;
+        overflow: auto;
         margin-top: 1rem;
         background-color: black;
         color: #0F0;
@@ -282,7 +287,6 @@
         align-content: center;
         padding: 1rem;
         margin-left: 25px;
-        height: 75%;
     }
 
     .icon-panel {
@@ -321,7 +325,7 @@
         }
         :global(.info-panel){
             font-size: 9px;
-            height: 100%;
+            height: 100px;
             padding-bottom: 0.2rem;
         }
         :global(.sc-carousel__content-container img) {
@@ -340,13 +344,3 @@
         }
     }
 </style>
-
-
-<!--{#if $locale==="de"}-->
-<!--    <iframe title="cosyCal" src="https://cozycal.com/it-consulting-de" style="width:100%;min-height:500px;border:none;"></iframe>-->
-<!--{:else}-->
-<!--    <iframe title="cosyCal" src="https://cozycal.com/le-space?show_embed_modal=1" style="width:100%;min-height:500px;border:none;"></iframe>-->
-<!--{/if}-->
-
-
-
