@@ -6,7 +6,14 @@ or traditionally on https://le-space.de
 
 # Roadmap
 - Setup JitsiMeet Instance (with lots of lots of CPU and RAM)
+- Profile & CV App 
+  - DataTable with Filter (use different AND for search e.g. IPFS AND Solidity or Libp2p and solitdy)
+  - This would create a CV & resume with a cover letter that points out those skills
+  - Print out CV from via a template (uploadable)
 - NFTs
+  - Einverständniserklärung "Connecting to p2plib network"
+  - Progress-Balken "Connecting to IPFS Network" 
+  - Progress-Balken "loading NFTs from Blockchain"
   - Claim NFT (transfer a token, with a signed tokenId by the owner)
   - Mint NFT (if not yet minted)
   - Animate NFTs (for next collection release)
