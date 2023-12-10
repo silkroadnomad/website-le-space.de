@@ -156,7 +156,7 @@
 
     setInterval(() => {
         currentIndex = (currentIndex + 1) % infoData.length;
-    }, 1500);
+    }, 2500);
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -174,7 +174,7 @@
             <div id="carousel" class="visible"
                  on:mouseenter={toggleBuyNFTButton} on:mouseleave={toggleBuyNFTButton}
                  on:dblclick={showBackground}  use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
-                <Carousel bind:this={carousel} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={1000}>
+                <Carousel bind:this={carousel} pauseOnFocus={true} initialPageIndex={currentPage}  on:pageChange={event => currentPage = event.detail} autoplay={true} autoplayDuration={6000} duration={3500}>
                     {#each timeline as item}
                         <CarouselImage css="object-position: 50% 70px" alt={item.image} src={item.image}>
                             {#if buttonVisible && (nftsMapped?.length>1 && nftsMapped?.findIndex(it=>it.slug===item.slug)!==-1)}
@@ -312,10 +312,21 @@
     :global(.carousel-image:hover .buy-nft) {
         opacity: 1;
     }
-    /* Adjust styles for screens smaller than 600px */
-    @media (max-width: 600px) {
+
+    @media (max-width: 800px) {
+        :global(.title-text h1) {
+           font-size: 30px;
+        /*font-weight: var(--cds-productive-heading-06-font-weight, 300);*/
+        /*line-height: var(--cds-productive-heading-06-line-height, 1.199);*/
+        /*letter-spacing: var(--cds-productive-heading-06-letter-spacing, 0);*/
+        }
         :global(.sc-carousel__pages-window) {
             height: 30vh;
+        }
+        :global(.info-panel){
+            font-size: 9px;
+            height: 100%;
+            padding-bottom: 0.2rem;
         }
         :global(.sc-carousel__content-container img) {
             width: 100%;
