@@ -130,6 +130,7 @@
         margin: 10px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     .flags {
         margin: 10px;
@@ -150,6 +151,8 @@
         :global(.peers) {
             width:100%;
             height: auto;
+            align-items: center;
+            justify-content: space-between;
             font-size: 8px;
         }
     }
