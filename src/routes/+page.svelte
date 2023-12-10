@@ -11,7 +11,7 @@
     import CarouselImage from "../components/CarouselImage.svelte";
     import { helia,currentImage } from '../routes/router.js';
     import {timeline_en, timeline_de} from "../timelines.js"
-    import {loadNFTs} from "../loadNfts.js";
+    import { loadNFTs } from "../loadNfts.js";
 
     let carousel
     let nftsMapped;
@@ -85,7 +85,6 @@
     }
 
     onMount( async () => {
-
         window.addEventListener('keydown', handleKeydown);
         return () => {
             window.removeEventListener('keydown', handleKeydown);
@@ -157,7 +156,7 @@
 
     setInterval(() => {
         currentIndex = (currentIndex + 1) % infoData.length;
-    }, 500);
+    }, 1500);
 </script>
 <div id="fullscreen-bg" class="hidden" on:dblclick={hideBackground} use:swipe={{ timeframe: 300, minSwipeDistance: 100}} on:swipe={doSwipe}>
      <img src={timeline[currentPage].image} />
@@ -195,7 +194,8 @@
             <div class="info-panel">
                 <table>
                     {#each [infoData[currentIndex], infoData[(currentIndex + 1) % infoData.length]] as item, i (item.label)}
-                        <tr transition:fly="{{ y: i === 0 ? 800 : -800, duration: 500, delay: i === 0 ? 0 : 500 }}">
+                        <tr>
+<!--                                transition:fly="{{ y: i === 0 ? 800 : -800, duration: 500, delay: i === 0 ? 0 : 500 }}">-->
                             <td>{$_(item.label)}</td><td>:</td><td>{item.value()}</td>
                         </tr>
                     {/each}
@@ -282,7 +282,7 @@
         align-content: center;
         padding: 1rem;
         margin-left: 25px;
-        height: 100%;
+        height: 75%;
     }
 
     .icon-panel {

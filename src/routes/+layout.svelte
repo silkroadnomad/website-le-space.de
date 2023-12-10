@@ -55,8 +55,6 @@
         //     console.log("self:peer:update",e)
         // });
     })
-
-    $:console.log("connected peers",$connectedPeers)
     const initAnalytics = () => { }
     let theme = "g80";
 </script>
@@ -91,12 +89,11 @@
         company="Le Space"
         platformName={title}
         href="#/">
-
     <HeaderNav>
     </HeaderNav>
     <HeaderUtilities>
         <div class="peers">
-            LibP2P Peers connected: {$connectedPeers}
+            Peers: {$connectedPeers}
         </div>
         <div class="flags">
             <De style="margin-right: 10px" on:click={()=>$locale="de"}/>
@@ -130,7 +127,7 @@
 {/if}
 <style>
     .peers {
-        margin: 25px;
+        margin: 10px;
         display: flex;
         justify-content: space-between;
     }
@@ -145,6 +142,14 @@
     }
     @media (max-width: 600px) {
         :global(a.bx--header__name, a.bx--header__name:hover) {
+            font-size: 8px;
+            line-height: 0.7rem;
+            padding: 0px;
+            margin-right: 1rem;
+        }
+        :global(.peers) {
+            width:100%;
+            height: auto;
             font-size: 8px;
         }
     }
