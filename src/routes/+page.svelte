@@ -306,7 +306,6 @@
         opacity: 0;
         transition: opacity 0.3s;
         z-index: 2;
-
     }
     /** enable when going live with NFT*/
     :global(.carousel-image:hover .buy-nft) {
@@ -316,9 +315,6 @@
     @media (max-width: 800px) {
         :global(.title-text h1) {
            font-size: 30px;
-        /*font-weight: var(--cds-productive-heading-06-font-weight, 300);*/
-        /*line-height: var(--cds-productive-heading-06-line-height, 1.199);*/
-        /*letter-spacing: var(--cds-productive-heading-06-letter-spacing, 0);*/
         }
         :global(.sc-carousel__pages-window) {
             height: 30vh;
