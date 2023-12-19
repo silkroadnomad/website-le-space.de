@@ -5,6 +5,13 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
+- BUG/FEATURE: NFTs don't display correctly in Metamask
+  - allow switching of tokenURI from ipfs to ipfs gateway per single NFT (getTokenURI should check if user want to use a dedicated nft-gateway)
+  - allow tokenholder to transfer NFT and metadata to ArWeave and Update tokenURI
+- Read NFTs directly from blockchain and display them in carousel & replace timelines.sh
+- Create Mint-Page in Svelte using Orbit-DB
+- Create optimized smaller scale image from original NFT from all Images in Carousel
+- Modify NFT metadata and add 
 - Setup JitsiMeet Instance (with lots of lots of CPU and RAM)
 - Profile & CV App 
   - DataTable with Filter (use different AND for search e.g. IPFS AND Solidity or Libp2p and solitdy)

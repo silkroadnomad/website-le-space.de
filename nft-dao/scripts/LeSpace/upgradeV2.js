@@ -11,7 +11,7 @@ async function main() {
       [deployer.address, deployer.address, deployer.address, deployer.address]);
 
   console.log("LeSpace contract upgraded with LeSpaceV2 at:", upgradedLeSpace.target);
-  await upgradedLeSpace.addClaimFunction()
+  await upgradedLeSpace.upgradeV2()
 }
 
 main()

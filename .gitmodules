@@ -1,0 +1,3 @@
+[submodule "nft-dao/solidity-stringutils"]
+	path = nft-dao/solidity-stringutils
+	url = https://github.com/Arachnid/solidity-stringutils.git

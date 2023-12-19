@@ -1,6 +1,6 @@
 # Le Space NFT-DAO Hardhat Project
 
-This project contains the Le Space NFTs and to coming Le Space DAO.
+This project contains the Le Space NFTs and the coming Le Space DAO.
 
 Try running some of the following tasks:
 

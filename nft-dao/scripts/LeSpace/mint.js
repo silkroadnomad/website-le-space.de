@@ -50,7 +50,6 @@ async function main() {
                 },
             }
 
-            // console.log("metadata",metadata)
             fs.writeFileSync(`./metadata/${index}.json`, JSON.stringify(metadata));
             const metadataFile = fs.readFileSync(`./metadata/${index}.json`);
             const metadataFileCid = await helia.add(metadataFile)

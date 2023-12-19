@@ -83,6 +83,7 @@ contract LeSpace is Initializable, ERC721Upgradeable, ERC721EnumerableUpgradeabl
     function tokenURI(uint256 tokenId)
     public
     view
+    virtual
     override(ERC721Upgradeable, ERC721URIStorageUpgradeable)
     returns (string memory)
     {
