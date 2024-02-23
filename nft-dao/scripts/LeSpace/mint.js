@@ -11,7 +11,7 @@ const NFT_CONTRACT_ADDRESS = "0x779eADD5A956a1b71DdBdF2A245cBE2eA5F59048"
 async function main() {
 
     const helia = await create('http://localhost:5001') // for default IPFS installation
-    let contractABI = JSON.parse(fs.readFileSync('artifacts/contracts/LeSpace.sol/LeSpace.json'))
+    let contractABI = JSON.parse(fs.readFileSync('artifacts/contracts/LeSpaceV2.sol/LeSpaceV2.json'))
     const contract = await ethers.getContractAt(contractABI.abi,NFT_CONTRACT_ADDRESS);
 
     for (let index = 0; index < timeline_en.length; index++) {
@@ -24,11 +24,9 @@ async function main() {
             console.log(`NFT with id ${index} is already minted to owner ${owner} with URI ${tokenURI}`);
             continue;
         } catch (error) {
-            console.log(`NFT with id ${index} is not minted yet by owner ${owner}`);
+            console.log(`NFT with id ${index} is not minted yet `);
         }
-
         try {
-
             const artFile = fs.readFileSync(`./art/${entry.image}`);
             const artResultCid = await helia.add(artFile)
             console.log(`stored art under cid: ${artResultCid.path} `)
@@ -57,6 +55,7 @@ async function main() {
             console.log("minting to cid",metadataFileCid.path)
             // Mint the NFT
             const retVal = await contract.safeMint(MINT_TO,`ipfs://${metadataFileCid.path}`)
+            console.log("retVal",retVal)
             console.log(`NFT with id ${index} minted for ${MINT_TO} to ipfs://${metadataFileCid.path}`);
             console.log("restart script again to mint next nft!")
             break;

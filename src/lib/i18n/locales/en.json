@@ -1,6 +1,7 @@
 {
   "page": {
     "home": {
+      "claim": "Claim",
       "data_protection": "Data Protection",
       "imprint": "Imprint"
     },

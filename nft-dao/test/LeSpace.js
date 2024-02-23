@@ -32,7 +32,9 @@ describe("LeSpaceV2", function () {
         const [signer] = await hre.ethers.getSigners();
         const message = `${tokenId}`;
         const hash = await upgradedLeSpace.getMessageHash(message)
+        console.log(`hash of tokenId: ${tokenId}`)
         const sig = await signer.signMessage(hre.ethers.getBytes(hash))
+        console.log(`sig: ${sig}`)
 
         const ethHash = await upgradedLeSpace.getEthSignedMessageHash(hash)
         // console.log("recovered signer", await upgradedLeSpace.recoverSigner(ethHash, sig))

@@ -4,7 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build --base=./",
 		"build:ipfs": "vite build && chmod +x ./fix_build.sh && sh fix_build.sh",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
@@ -44,8 +44,10 @@
 	"type": "module",
 	"dependencies": {
 		"@helia/unixfs": "^1.4.3",
+		"@libp2p/pubsub-peer-discovery": "^10.0.2",
 		"ethers": "^6.9.0",
 		"helia": "^2.1.0",
+		"svelte-ethers-store": "^2.6.1",
 		"svelte-marquee-text-widget": "^1.1.0"
 	}
 }

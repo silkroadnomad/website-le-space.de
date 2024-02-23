@@ -1,11 +1,12 @@
 <script>
     import { createHelia } from 'helia'
     import { browser } from '$app/environment'
-    import {PUBLIC_WEB_URL} from "$env/static/public";
+    import { PUBLIC_WEB_URL } from "$env/static/public";
     import { locale, isLoading, waitLocale, _ } from 'svelte-i18n'
     import { currentImage, helia, connectedPeers } from './router.js';
-    import { De,Gb } from 'svelte-flag-icons';
-    import {timeline_en, timeline_de} from "../timelines.js"
+    import { De, Gb } from 'svelte-flag-icons';
+    import { timeline_en, timeline_de } from "../timelines.js"
+    import { config } from "./config.js"
     import {
         Theme, Header,
         HeaderNav,
@@ -41,21 +42,14 @@
     }
 
     onMount(async ()=>{
-        $helia = await createHelia()
+        $helia = await createHelia(config)
         $helia.libp2p.addEventListener('connection:open',  () => {
             connectedPeers.update(n => n + 1);
         });
         $helia.libp2p.addEventListener('connection:close', () => {
             connectedPeers.update(n => n - 1);
         });
-        // $helia.libp2p.addEventListener('peer:discovery', (e) => {
-        //     console.log("v",e)
-        // });
-        // $helia.libp2p.addEventListener('self:peer:update', (e) => {
-        //     console.log("self:peer:update",e)
-        // });
     })
-    const initAnalytics = () => { }
     let theme = "g80";
 </script>
 
@@ -88,7 +82,7 @@
         bind:isSideNavOpen
         company="Le Space"
         platformName={title}
-        href="#/">
+        href="./#/">
     <HeaderNav>
     </HeaderNav>
     <HeaderUtilities>
@@ -119,10 +113,16 @@
 {:else}
     <SideNav bind:isOpen={isSideNavOpen}>
         <SideNavItems>
-            <SideNavLink href={"/"+$locale+"/gdpr"} text={$_('page.home.data_protection')} />
-            <SideNavLink href={"/"+$locale+"/imprint"} text={$_('page.home.imprint')} />
+            <SideNavLink href={"./claim"} text={$_('page.home.claim')} />
+            <SideNavLink href={"./"+$locale+"/gdpr"} text={$_('page.home.data_protection')} />
+            <SideNavLink href={"./"+$locale+"/imprint"} text={$_('page.home.imprint')} />
         </SideNavItems>
     </SideNav>
+    <h1> bla bla bla bla</h1>
+    <h1> bla bla bla bla</h1>
+    <h1> bla bla bla bla</h1>
+    <h1> bla bla bla bla</h1>
+
 <slot></slot>
 {/if}
 <style>

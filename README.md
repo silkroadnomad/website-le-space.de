@@ -5,6 +5,12 @@ otherwise on https://ipfs.le-space.de/ipns/le-space.de
 or traditionally on https://le-space.de 
 
 # Roadmap
+- Make logo claim dependend on current photo / project
+- Optimize picture loading
+- Create Claim-NFT
+  - /claim?token=id&signature=sig
+  - show token
+  - button claim
 - BUG/FEATURE: NFTs don't display correctly in Metamask
   - allow switching of tokenURI from ipfs to ipfs gateway per single NFT (getTokenURI should check if user want to use a dedicated nft-gateway)
   - allow tokenholder to transfer NFT and metadata to ArWeave and Update tokenURI
