@@ -113,15 +113,11 @@
 {:else}
     <SideNav bind:isOpen={isSideNavOpen}>
         <SideNavItems>
-            <SideNavLink href={"./claim"} text={$_('page.home.claim')} />
+         <!--   <SideNavLink href={"./claim"} text&lt;!&ndash;&ndash;&gt;={$_('page.home.claim')} />-->
             <SideNavLink href={"./"+$locale+"/gdpr"} text={$_('page.home.data_protection')} />
             <SideNavLink href={"./"+$locale+"/imprint"} text={$_('page.home.imprint')} />
         </SideNavItems>
     </SideNav>
-    <h1> bla bla bla bla</h1>
-    <h1> bla bla bla bla</h1>
-    <h1> bla bla bla bla</h1>
-    <h1> bla bla bla bla</h1>
 
 <slot></slot>
 {/if}
